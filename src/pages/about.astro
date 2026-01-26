@@ -1,0 +1,195 @@
+---
+import SiteLayout from '@layouts/SiteLayout.astro';
+import TeamSection from '@components/TeamSection.astro';
+import PageHero from '@components/PageHero.astro';
+import Eyebrow from '@components/Eyebrow.astro';
+
+const metadata = {
+  title: 'About Us | [Business Name]',
+  description: '[Learn about our mission, values, and the team behind our services]',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About [Business Name]',
+    description: '[Our story, values, and commitment to quality service]'
+  }
+};
+
+// Data Structures
+const stats = [
+  { value: '[Stat 1]', label: '[Stat 1 Label]' },
+  { value: '[Stat 2]', label: '[Stat 2 Label]' },
+  { value: '[Stat 3]', label: '[Stat 3 Label]' },
+  { value: '[Stat 4]', label: '[Stat 4 Label]' },
+];
+
+const values = [
+  {
+    title: '[Value 1 Title]',
+    description: '[Value 1 description - explain what this value means for your clients]',
+    icon: 'award'
+  },
+  {
+    title: '[Value 2 Title]',
+    description: '[Value 2 description - explain what this value means for your clients]',
+    icon: 'heart'
+  },
+  {
+    title: '[Value 3 Title]',
+    description: '[Value 3 description - explain what this value means for your clients]',
+    icon: 'users'
+  },
+  {
+    title: '[Value 4 Title]',
+    description: '[Value 4 description - explain what this value means for your clients]',
+    icon: 'user'
+  }
+];
+
+const originStory = {
+  eyebrow: "Our Origins",
+  heading: "[Your Origin Story Headline]",
+  text: "[Tell your founding story - who started the business, why, and what gap you identified in the market. 2-3 sentences that connect with your audience.]"
+};
+
+const missionStory = {
+  eyebrow: "Our Mission",
+  heading: "[Your Mission Headline]",
+  text: "[Describe your mission - what you're working to achieve and how you're making a difference in your community or industry. 2-3 sentences.]"
+};
+
+---
+
+<SiteLayout metadata={metadata}>
+  
+  <PageHero
+    heading='[Your About Page Headline]'
+    subheading="[A compelling description of your company's approach and what makes you different]"
+    primaryCtaText="Get in Touch"
+    primaryCtaHref="/contact"
+    secondaryCtaText="Read Our Story"
+    secondaryCtaHref="#story"
+    imageSrc="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    imageAlt="[Your team or workplace image description]"
+  >
+    <div slot="visual" class="grid grid-cols-2 gap-4 sm:gap-6">
+      {stats.map((stat) => (
+        <div class="bg-white/60 backdrop-blur-md border border-white/50 rounded-[2.5rem] p-6 text-center hover:bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 shadow-xl">
+          <div class="text-3xl sm:text-4xl font-bold text-teal mb-2">{stat.value}</div>
+          <div class="text-sm sm:text-base text-muted-foreground font-medium">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </PageHero>
+
+  {/* Our Story Section */}
+  <section id="story">
+    <!-- Origin Story Block -->
+    <div class="grid lg:grid-cols-2">
+      <div class="flex items-center order-2 lg:order-1 bg-background p-12 lg:p-24">
+        <div>
+          <Eyebrow text={originStory.eyebrow} />
+          <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6">{originStory.heading}</h2>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            {originStory.text}
+          </p>
+        </div>
+      </div>
+      <div class="relative h-full min-h-[400px] order-1 lg:order-2">
+        <img 
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" 
+          alt="Office environment" 
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- Mission Story Block -->
+    <div class="grid lg:grid-cols-2">
+      <div class="relative h-full min-h-[400px]">
+        <img 
+          src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" 
+          alt="Care team collaboration" 
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+      <div class="flex items-center bg-muted/30 p-12 lg:p-24">
+        <div>
+          <Eyebrow text={missionStory.eyebrow} />
+          <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6">{missionStory.heading}</h2>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            {missionStory.text}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Values Section */}
+  <section class="py-24 bg-secondary/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
+        <Eyebrow text="Our Values" align="center" />
+        <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6">Our Core Values</h2>
+        <p class="text-lg text-muted-foreground">
+          These principles guide every interaction, every care plan, and every decision we make. They are the foundation of our service.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-px bg-border border border-border rounded-[2.5rem] overflow-hidden shadow-2xl">
+        {values.map((value, index) => (
+          <div class={[`p-8 lg:p-12 flex flex-col h-full transition-colors duration-300 group`, index === 0 || index === 3 ? `bg-muted hover:bg-card` : `bg-card hover:bg-muted`].join(' ')}>
+            <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center mb-6 text-black transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 transform">
+              {/* Simple SVG Icons based on the 'icon' property */}
+              {value.icon === 'heart' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              )}
+              {value.icon === 'award' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              )}
+              {value.icon === 'user' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              )}
+              {value.icon === 'users' && (
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              )}
+            </div>
+            <h3 class="text-2xl font-bold text-foreground mb-3">{value.title}</h3>
+            <p class="text-muted-foreground leading-relaxed">
+              {value.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* TeamSection - Reusing existing component */}
+  <TeamSection
+    eyebrow="Our Experts"
+    heading="Meet Our Team"
+    intro="[Describe your team's expertise and what makes them special. What training, qualifications, or experience do they bring?]"
+  />
+
+  {/* CTA Section */}
+  <section class="py-20 bg-primary text-primary-foreground">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-6">[Your CTA Headline]</h2>
+      <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+        [Your CTA description - encourage visitors to take the next step]
+      </p>
+      <a href="https://vertexplatformsolutions.com/offers/healthcare-agencies" target="_blank" rel="noopener" class="inline-block bg-accent text-accent-foreground font-bold py-4 px-10 rounded-full shadow-lg transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+        Get This Site Built For You
+      </a>
+    </div>
+  </section>
+
+</SiteLayout>

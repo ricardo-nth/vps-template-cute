@@ -1,0 +1,249 @@
+/* ============================================================================
+   ORIGINAL GLOBAL.CSS (Commented for easy revert)
+   ============================================================================
+   To revert to original styling, uncomment this section and remove the
+   Healthcare Color System section below.
+
+@import "tailwindcss";
+@import "preline/variants.css";
+@source "../../node_modules/preline/dist/*.js";
+
+@theme inline {
+    --font-sans: var(--font-inter);
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@custom-variant hover (&:hover);
+
+*:focus-visible {
+  outline: 2px solid #3245ff;
+  outline-offset: 2px;
+}
+   ============================================================================ */
+
+/* ============================================================================
+   HEALTHCARE COLOR SYSTEM (Active)
+   ============================================================================ */
+
+@import "tailwindcss";
+@import "preline/variants.css";
+@source "../../node_modules/preline/dist/*.js";
+
+/**
+ * Design token palette for Cute healthcare template.
+ *
+ * BRAND COLORS:
+ * ====================
+ * Primary:   #98EDCC (Mint Green)
+ * Accent 1:  #FFDD00 (Bright Yellow)
+ * Accent 2:  #E3D8F5 (Light Lavender)
+ * Plus plenty of white and whitespace
+ *
+ * TIP: Use a tool like https://oklch.com to pick custom colors
+ *      in OKLCH format for consistent brightness across themes.
+ */
+
+:root {
+  /* Neutral surfaces - clean white backgrounds */
+  --background: oklch(1.00 0 0);           /* Page background (white) */
+  --foreground: oklch(0.25 0 0);           /* Main text (dark gray) */
+  --card: oklch(1.00 0 0);                 /* Card background (white) */
+  --card-foreground: oklch(0.25 0 0);      /* Card text (dark gray) */
+
+  /* BRAND COLORS - Mint, Yellow & Lavender */
+  --primary: oklch(0.89 0.11 163);         /* 🎨 Main brand color (Mint Green #98EDCC) */
+  --primary-foreground: oklch(0.20 0 0);   /* Text on primary (dark for contrast) */
+
+  /* Subtle backgrounds - Light lavender sections */
+  --secondary: oklch(0.96 0.02 300);       /* Very light lavender sections */
+  --secondary-foreground: oklch(0.30 0 0);
+
+  /* Custom navigation colors */
+  --nav-primary-bg: oklch(0.89 0.11 163);      /* Mint green for primary nav (#98EDCC) */
+  --nav-primary-text: oklch(0.20 0 0);         /* Dark text for primary nav */
+  --nav-secondary-bg: oklch(0.75 0.12 163);    /* Darker mint for secondary nav */
+  --nav-secondary-text: oklch(0.15 0 0);       /* Dark text for secondary nav */
+
+  /* Muted/subtle text - Grey tones */
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.45 0 0);     /* Muted grey text */
+
+  /* Accent - Yellow for highlights and CTAs */
+  --accent: oklch(0.91 0.19 100);          /* 🎨 Yellow accent (#FFDD00) */
+  --accent-foreground: oklch(0.20 0 0);    /* Dark text on yellow */
+
+  /* Accent 2 - Lavender for subtle highlights */
+  --accent-secondary: oklch(0.89 0.05 300); /* 🎨 Light Lavender accent (#E3D8F5) */
+  --accent-secondary-foreground: oklch(0.30 0 0);
+
+  /* Teal - For eyebrows/labels on white backgrounds */
+  --teal: oklch(0.60 0.10 180);            /* 🎨 Teal (#449C9B) - high contrast on white */
+  --teal-foreground: oklch(1 0 0);         /* White text on teal */
+
+  /* Error/destructive states */
+  --destructive: oklch(0.64 0.21 25.39);
+  --destructive-foreground: oklch(1 0 0);
+
+  /* Borders and inputs - Light neutral grey */
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.92 0 0);
+
+  /* Focus ring - matches primary mint */
+  --ring: oklch(0.75 0.12 163);            /* 🎨 Focus ring (darker mint for visibility) */
+
+  /* Hero overlays (if using hero components) */
+  --hero-overlay: oklch(1 0 0 / 0.85);
+  --hero-overlay-foreground: oklch(0.25 0 0);
+}
+
+.dark {
+  /* Dark mode - neutral surfaces */
+  --background: oklch(0.20 0 0);           /* Dark background */
+  --foreground: oklch(0.92 0 0);           /* Light text */
+  --card: oklch(0.27 0 0);                 /* Slightly lighter cards */
+  --card-foreground: oklch(0.92 0 0);      /* Light text on cards */
+
+  /* BRAND COLORS (adjusted for dark mode) */
+  --primary: oklch(0.85 0.10 163);         /* 🎨 Mint Green (lighter for dark bg) */
+  --primary-foreground: oklch(0.15 0 0);   /* Dark text on primary */
+
+  /* Dark mode backgrounds */
+  --secondary: oklch(0.27 0 0);
+  --secondary-foreground: oklch(0.92 0 0);
+
+  /* Muted text in dark mode */
+  --muted: oklch(0.27 0 0);
+  --muted-foreground: oklch(0.72 0 0);
+
+  /* Accent - Yellow */
+  --accent: oklch(0.88 0.17 100);          /* 🎨 Yellow accent (slightly muted) */
+  --accent-foreground: oklch(0.15 0 0);
+
+  /* Accent 2 - Lavender */
+  --accent-secondary: oklch(0.75 0.06 300); /* 🎨 Lavender (adjusted for dark) */
+  --accent-secondary-foreground: oklch(0.95 0 0);
+
+  /* Error states */
+  --destructive: oklch(0.64 0.21 25.39);
+  --destructive-foreground: oklch(1 0 0);
+
+  /* Dark borders */
+  --border: oklch(0.37 0 0);
+  --input: oklch(0.37 0 0);
+
+  /* Focus ring - matches primary mint */
+  --ring: oklch(0.85 0.10 163);            /* 🎨 Focus ring (mint) */
+
+  /* Hero overlays */
+  --hero-overlay: oklch(0.20 0 0 / 0.8);
+  --hero-overlay-foreground: oklch(0.92 0 0);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-secondary-foreground: var(--accent-secondary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-hero-overlay: var(--hero-overlay);
+  --color-hero-overlay-foreground: var(--hero-overlay-foreground);
+  --color-nav-primary: var(--nav-primary-bg);
+  --color-nav-primary-foreground: var(--nav-primary-text);
+  --color-nav-secondary: var(--nav-secondary-bg);
+  --color-nav-secondary-foreground: var(--nav-secondary-text);
+  --color-teal: var(--teal);
+  --color-teal-foreground: var(--teal-foreground);
+}
+
+/* Adds pointer cursor to buttons */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* Defaults hover styles on all devices */
+@custom-variant hover (&:hover);
+
+/* Focus visible for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* ============================================================================
+   PREMIUM UTILITIES
+   ============================================================================ */
+
+@layer utilities {
+  /* Glassmorphism */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border-b border-white/20;
+  }
+  
+  .dark .glass {
+    @apply bg-black/80 border-white/10;
+  }
+
+  /* Text Balance for headlines */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Smooth text rendering */
+  .antialiased-premium {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Typography Tokens */
+  .text-h1 {
+    @apply text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] tracking-tight;
+  }
+  
+  .text-h2 {
+    @apply text-3xl sm:text-4xl font-bold tracking-tight;
+  }
+  
+  .text-h3 {
+    @apply text-2xl font-bold;
+  }
+  
+  .text-h4 {
+    @apply text-xl font-semibold;
+  }
+  
+  .text-body {
+    @apply text-base text-muted-foreground leading-relaxed;
+  }
+
+  .text-body-lg {
+    @apply text-lg sm:text-xl text-muted-foreground leading-relaxed;
+  }
+  
+  .text-eyebrow {
+    @apply text-sm font-medium uppercase tracking-wider;
+  }
+}

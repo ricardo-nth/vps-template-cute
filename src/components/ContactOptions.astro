@@ -1,0 +1,88 @@
+---
+import Icon from './Icon.astro';
+
+interface ContactOption {
+  icon: string;
+  title: string;
+  value: string;
+  href: string;
+  description?: string;
+  primary?: boolean;
+}
+
+interface Props {
+  options?: ContactOption[];
+  variant?: 'hero' | 'grid';
+}
+
+const {
+  variant = 'grid',
+  options = [
+    {
+      icon: "tabler:phone",
+      title: "Call Us",
+      value: "[Your Phone]",
+      href: "tel:+44XXXXXXXXXX",
+      description: "Available during business hours",
+      primary: true
+    },
+    {
+      icon: "tabler:brand-whatsapp",
+      title: "WhatsApp",
+      value: "Chat with us",
+      href: "https://wa.me/44XXXXXXXXXX",
+      description: "Quick responses 9am-5pm"
+    },
+    {
+      icon: "tabler:mail",
+      title: "Email Us",
+      value: "[email]@yourdomain.co.uk",
+      href: "mailto:[email]@yourdomain.co.uk",
+      description: "We'll reply within 24 hours"
+    }
+  ]
+} = Astro.props as Props;
+---
+
+{variant === 'hero' ? (
+  <div class="grid gap-4 sm:gap-6">
+    {options.map((option) => (
+      <a 
+        href={option.href}
+        class={`flex items-center gap-4 p-4 rounded-xl border transition-all duration-300 group shadow-sm hover:shadow-md hover:-translate-y-0.5
+          ${option.primary 
+            ? 'bg-white border-teal/20 text-foreground' 
+            : 'bg-white/60 border-white/50 text-foreground/80 hover:bg-white'
+          }`}
+      >
+        <div class={`flex items-center justify-center w-12 h-12 rounded-lg shrink-0 transition-colors shadow-sm
+          ${option.primary ? 'bg-teal text-white' : 'bg-white text-teal'}`}>
+          <Icon name={option.icon} class="w-6 h-6" />
+        </div>
+        <div>
+          <p class="font-medium text-sm opacity-70">{option.title}</p>
+          <p class="font-bold text-lg text-teal">{option.value}</p>
+        </div>
+        <Icon name="tabler:arrow-right" class="w-5 h-5 ml-auto text-teal opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+      </a>
+    ))}
+  </div>
+) : (
+  <div class="grid md:grid-cols-3 gap-8">
+    {options.map((option) => (
+      <a 
+        href={option.href}
+        class="group flex flex-col items-center text-center p-8 rounded-[2.5rem] bg-card border border-border hover:border-primary/50 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+      >
+        <div class="w-16 h-16 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-primary/90 transition-all duration-300 shadow-md">
+          <Icon name={option.icon} class="w-8 h-8" />
+        </div>
+        <h3 class="text-xl font-bold text-foreground mb-2">{option.title}</h3>
+        <p class="text-lg font-medium text-teal mb-2">{option.value}</p>
+        {option.description && (
+          <p class="text-sm text-muted-foreground">{option.description}</p>
+        )}
+      </a>
+    ))}
+  </div>
+)}

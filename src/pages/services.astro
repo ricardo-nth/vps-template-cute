@@ -1,0 +1,84 @@
+---
+import SiteLayout from '@layouts/SiteLayout.astro';
+import { siteConfig } from '@/config/site';
+import PageHero from '@components/PageHero.astro';
+import SupportedLivingFeatures from '@components/SupportedLivingFeatures.astro';
+import ServiceSpecialties from '@components/ServiceSpecialties.astro';
+import CompliancePillars from '@components/CompliancePillars.astro';
+import CareDeliveryProcess from '@components/CareDeliveryProcess.astro';
+import ContactSection from '@components/ContactSection.astro';
+
+const metadata = {
+  title: `Services | ${siteConfig.name}`,
+  description: `[Description of your services - what you offer and who you serve]`,
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Our Services',
+    description: '[Overview of your service offerings]',
+    mainEntity: {
+      '@type': 'Service',
+      name: 'Our Services',
+      description: '[Description of your service offerings]',
+      serviceType: '[Your Service Type]',
+      provider: {
+        '@type': 'Organization',
+        name: siteConfig.name
+      },
+      areaServed: '[Your Service Area]',
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: '[Your Service Category]',
+        itemListElement: [
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: '[Service 1 Name]'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: '[Service 2 Name]'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: '[Service 3 Name]'
+            }
+          }
+        ]
+      }
+    }
+  }
+};
+---
+
+<SiteLayout metadata={metadata}>
+  <PageHero
+    heading="[Your Services Headline]"
+    subheading="[Describe your service offerings and the value you provide to clients]"
+    primaryCtaText="Enquire Today"
+    primaryCtaHref="/contact"
+    secondaryCtaText="Explore Services"
+    secondaryCtaHref="#features"
+    imageSrc="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    imageAlt="[Your services image description]"
+  />
+
+  <section id="features">
+    <SupportedLivingFeatures />
+  </section>
+
+  <ServiceSpecialties />
+
+  <CompliancePillars />
+
+
+
+  <ContactSection />
+</SiteLayout>

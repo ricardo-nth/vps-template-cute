@@ -1,0 +1,50 @@
+---
+import SiteLayout from '@layouts/SiteLayout.astro';
+import PageHero from '@components/PageHero.astro';
+import ContactOptions from '@components/ContactOptions.astro';
+import OfficeLocation from '@components/OfficeLocation.astro';
+import FeedbackSection from '@components/FeedbackSection.astro';
+
+const metadata = {
+  title: 'Contact | [Business Name]',
+  description: '[Contact us for enquiries, support, or to learn more about our services]',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact [Business Name]',
+    description: '[Get in touch for enquiries and support]'
+  }
+};
+---
+
+<SiteLayout metadata={metadata}>
+  <PageHero
+    heading="We're Here to Help"
+    subheading="[Your contact page introduction - what can visitors reach out about and how you can help them]"
+    primaryCtaText="Call Now"
+    primaryCtaHref="tel:+44XXXXXXXXXX"
+    secondaryCtaText="Send Email"
+    secondaryCtaHref="mailto:[email]@yourdomain.co.uk"
+  >
+    <div slot="visual" class="bg-white/60 backdrop-blur-md border border-white/50 rounded-[2.5rem] p-8 shadow-xl">
+      <h3 class="text-2xl font-bold text-foreground mb-6">Quick Contact</h3>
+      <ContactOptions variant="hero" />
+    </div>
+  </PageHero>
+
+  <section class="py-24 bg-background">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6">How Can We Help?</h2>
+        <p class="text-lg text-muted-foreground">
+          Choose the most convenient way to get in touch. Our dedicated team is available to answer your questions and provide the support you need.
+        </p>
+      </div>
+      <ContactOptions variant="grid" />
+    </div>
+  </section>
+
+  <OfficeLocation />
+
+  <FeedbackSection />
+</SiteLayout>

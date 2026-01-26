@@ -1,0 +1,73 @@
+---
+/**
+ * AboutUs.astro - About Us section component (BeyondFS style)
+ *
+ * Split layout with section label, dash accent, and underlined link CTA.
+ */
+
+import Eyebrow from './Eyebrow.astro';
+
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+  description?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  sectionId?: string;
+}
+
+const {
+  eyebrow = "ABOUT US",
+  heading = "[Your About Headline]",
+  description = "[Your company story - who you are, what you do, and why you're different. 2-3 sentences that capture your mission and values.]",
+  ctaText = "Explore Our Story",
+  ctaHref = "/about",
+  imageSrc = "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80",
+  imageAlt = "[Describe your about section image]",
+  sectionId = "about"
+} = Astro.props;
+---
+
+<section id={sectionId}>
+  <div class="grid lg:grid-cols-2">
+    <!-- Content Column - Light mint background -->
+    <div class="bg-primary/10 px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-32 flex flex-col justify-center">
+      <div class="max-w-lg">
+        <!-- Section label with dash -->
+        <div class="mb-6">
+          <Eyebrow text={eyebrow} />
+        </div>
+
+        <!-- Heading -->
+        <h2 class="text-3xl sm:text-4xl font-bold text-foreground tracking-tight leading-tight mb-6">
+          {heading}
+        </h2>
+
+        <!-- Description -->
+        <p class="text-muted-foreground text-lg leading-relaxed mb-8">
+          {description}
+        </p>
+
+        <!-- Underlined link CTA -->
+        <a
+          href={ctaHref}
+          class="inline-block text-foreground font-semibold border-b-2 border-foreground pb-1 hover:text-primary hover:border-primary transition-colors"
+        >
+          {ctaText}
+        </a>
+      </div>
+    </div>
+
+    <!-- Image Column -->
+    <div class="relative min-h-[400px] lg:min-h-0">
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>

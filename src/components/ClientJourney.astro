@@ -1,0 +1,92 @@
+---
+import Icon from './Icon.astro';
+import Eyebrow from './Eyebrow.astro';
+
+interface Step {
+  title: string;
+  description: string;
+  icon?: string;
+}
+
+interface Props {
+  heading?: string;
+  subheading?: string;
+  steps?: Step[];
+}
+
+const {
+  heading = "Your Journey With Us",
+  subheading = "We believe in a partnership approach. From our very first conversation to your ongoing care, every step is designed around your needs, choices, and aspirations.",
+  steps = [
+    {
+      title: "Initial Consultation",
+      description: "We begin by listening. We take the time to understand your unique history, your current needs, and your future aspirations to ensure we are the right partner for you.",
+      icon: "tabler:message-circle-2"
+    },
+    {
+      title: "Holistic Assessment",
+      description: "Our clinical and social care experts conduct a comprehensive review of your health, emotional, and social requirements to build a complete picture of your support needs.",
+      icon: "tabler:clipboard-heart"
+    },
+    {
+      title: "Bespoke Care Planning",
+      description: "We co-create a detailed support plan that puts you in control. This plan is not just about safety; it's about enabling you to live the life you want.",
+      icon: "tabler:writing"
+    },
+    {
+      title: "The Right Match",
+      description: "We carefully select a care team and living environment that aligns not just with your clinical needs, but with your personality, interests, and lifestyle preferences.",
+      icon: "tabler:users-group"
+    },
+    {
+      title: "Ongoing Partnership",
+      description: "Care is a journey, not a destination. We provide continuous reviews and adapt our support as your needs and goals evolve, ensuring you always thrive.",
+      icon: "tabler:infinity"
+    }
+  ]
+} = Astro.props as Props;
+---
+
+<section class="py-24 bg-background" id="client-journey">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <div class="flex justify-center">
+        <Eyebrow text="The Client Experience" align="center" />
+      </div>
+      <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6">{heading}</h2>
+      <p class="text-lg text-muted-foreground">{subheading}</p>
+    </div>
+
+    <div class="relative">
+      {/* Vertical Line */}
+      <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-border md:left-1/2 md:-ml-px"></div>
+
+      <div class="space-y-12">
+        {steps.map((step, index) => (
+          <div class={`relative flex items-start md:items-center gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+            
+            {/* Timeline Dot */}
+            <div class="absolute left-8 -translate-x-1/2 md:left-1/2 flex items-center justify-center w-12 h-12 rounded-full border-4 border-background z-10 bg-primary text-primary-foreground shadow-md">
+              <span class="font-bold text-lg">{index + 1}</span>
+            </div>
+
+            {/* Content Card */}
+            <div class="flex-1 ml-12 md:ml-0">
+              <div class="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 hover:border-primary/30 group">
+                <div class="flex flex-col gap-2 mb-2">
+                  <h3 class="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">{step.title}</h3>
+                </div>
+                <p class="text-muted-foreground text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </div>
+            
+            {/* Spacer for alternating layout on desktop */}
+            <div class="hidden md:block flex-1"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

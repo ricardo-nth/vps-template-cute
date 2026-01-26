@@ -1,0 +1,40 @@
+---
+import SiteLayout from '@layouts/SiteLayout.astro';
+import PageHero from '@components/PageHero.astro';
+import WhyChooseUs from '@components/WhyChooseUs.astro';
+import ClientJourney from '@components/ClientJourney.astro';
+import ContactSection from '@components/ContactSection.astro';
+
+const metadata = {
+  title: 'Our Approach | [Business Name]',
+  description: '[Describe your unique approach and methodology]',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Our Approach',
+    description: '[Your approach to delivering quality services]'
+  }
+};
+---
+
+<SiteLayout metadata={metadata}>
+  <PageHero
+    heading="[Your Approach Headline]"
+    subheading="[Describe what makes your approach unique and how it benefits your clients]"
+    primaryCtaText="Contact Us"
+    primaryCtaHref="/contact"
+    secondaryCtaText="Our Values"
+    secondaryCtaHref="#values"
+    imageSrc="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    imageAlt="[Your approach image description]"
+  />
+
+  <WhyChooseUs
+    heading="Why Clients Choose Us"
+    id="values"
+  />
+
+  <ClientJourney />
+
+  <ContactSection />
+</SiteLayout>

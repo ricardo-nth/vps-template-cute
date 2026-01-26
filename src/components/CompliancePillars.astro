@@ -1,0 +1,85 @@
+---
+import Icon from './Icon.astro';
+import Eyebrow from './Eyebrow.astro';
+
+interface Pillar {
+  icon: string;
+  title: string;
+  description: string;
+  cqcEvidence: string;
+}
+
+interface Props {
+  heading?: string;
+  subheading?: string;
+  pillars?: Pillar[];
+}
+
+const {
+  heading = "Our Core Service Pillars",
+  subheading = "Foundational principles that guide our support for adults with learning disabilities and autism.",
+  pillars = [
+    {
+      icon: "tabler:user-heart",
+      title: "Person-Centred",
+      description: "Putting you at the heart of every decision, ensuring your voice shapes your care journey."
+    },
+    {
+      icon: "tabler:mood-smile",
+      title: "Positive Behaviour Support",
+      description: "Proactive, compassionate strategies that focus on quality of life and reducing restrictions."
+    },
+    {
+      icon: "tabler:users-group",
+      title: "Community Integration",
+      description: "Building meaningful connections, active citizenship, and participation in local life."
+    },
+    {
+      icon: "tabler:heart-handshake",
+      title: "Family Partnership",
+      description: "Collaborating closely with loved ones and support networks to build a trusted team."
+    }
+  ]
+} = Astro.props as Props;
+---
+
+<section class="relative py-24 lg:py-32 overflow-hidden bg-background">
+  
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="flex justify-center">
+        <Eyebrow text="Our Approach" align="center" />
+      </div>
+      <h2 class="text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
+        {heading}
+      </h2>
+      <p class="text-xl text-muted-foreground leading-relaxed">
+        {subheading}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {pillars.map((pillar, index) => (
+        <div class="group relative flex flex-col bg-secondary rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+          
+          <!-- Icon -->
+          <div class="mb-6">
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary text-black shadow-sm">
+              <Icon name={pillar.icon} class="w-7 h-7" />
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-foreground mb-3">
+              {pillar.title}
+            </h3>
+            <p class="text-base text-muted-foreground leading-relaxed">
+              {pillar.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

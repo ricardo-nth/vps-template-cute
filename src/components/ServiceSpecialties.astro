@@ -1,0 +1,107 @@
+---
+import Icon from './Icon.astro';
+
+interface Specialty {
+  title: string;
+  description: string;
+  icon: string;
+  imageSrc: string;
+  features: string[];
+}
+
+interface Props {
+  heading?: string;
+  subheading?: string;
+  specialties?: Specialty[];
+}
+
+const {
+  heading = "Specialist Support Pathways",
+  subheading = "We focus on the complex needs that generic homecare providers aren't equipped to handle. Our specialist pathways ensure every individual receives the right expertise.",
+  specialties = [
+    {
+      title: "Learning Disabilities",
+      description: "Specialist support for adults with learning disabilities, focusing on skill-building, positive behaviour support, and community engagement in Beeston and Broxtowe.",
+      icon: "tabler:bulb",
+      imageSrc: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80",
+      features: ["Positive Behaviour Support", "Skill acquisition", "Community inclusion"]
+    },
+    {
+      title: "Autism & Neurodiversity",
+      description: "Structured, sensory-aware environments with specialist staff training. Culturally-competent support tailored to neurodiverse needs within minority communities.",
+      icon: "tabler:puzzle",
+      imageSrc: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80",
+      features: ["Sensory-friendly approach", "Routine support", "Culturally-sensitive care"]
+    },
+    {
+      title: "Mental Health Support",
+      description: "Recovery-focused support for adults with enduring mental health needs. Crisis prevention, emotional wellbeing, and trauma-informed outreach.",
+      icon: "tabler:brain",
+      imageSrc: "https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=800&q=80",
+      features: ["Recovery model", "Crisis prevention", "Trauma-informed care"]
+    },
+    {
+      title: "Dual Diagnosis",
+      description: "Specialist support for individuals with both learning disabilities and mental health needs – an area where most local providers lack expertise.",
+      icon: "tabler:heart-handshake",
+      imageSrc: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80",
+      features: ["Integrated care plans", "Specialist training", "Behaviour support"]
+    },
+    {
+      title: "Behaviours That Challenge",
+      description: "Positive Behaviour Support approaches for individuals with complex behaviours. Crisis-prevention and community-based interventions in ordinary housing.",
+      icon: "tabler:shield-check",
+      imageSrc: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=800&q=80",
+      features: ["PBS approach", "Specialist staff", "Crisis prevention"]
+    },
+    {
+      title: "Carer & Family Support",
+      description: "Planned respite, carer-wellbeing visits, and crisis-prevention support. We work alongside families to sustain the whole care ecosystem.",
+      icon: "tabler:users",
+      imageSrc: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
+      features: ["Planned respite", "Night sits", "Family support"]
+    }
+  ]
+} = Astro.props as Props;
+---
+
+<section class="py-24 bg-background" id="specialties">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6">{heading}</h2>
+      <p class="text-lg text-muted-foreground">{subheading}</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {specialties.map((specialty) => (
+        <div class="group bg-card border border-border rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:-translate-y-1 hover:bg-primary flex flex-col h-full">
+          <div class="relative h-64 overflow-hidden">
+            <img 
+              src={specialty.imageSrc} 
+              alt={specialty.title}
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+            />
+            <div class="absolute bottom-4 left-4 z-20 bg-primary text-primary-foreground p-3 rounded-xl shadow-sm">
+              <Icon name={specialty.icon} class="w-6 h-6" />
+            </div>
+          </div>
+          
+          <div class="p-8 flex flex-col flex-1 relative">
+            <h3 class="text-2xl font-bold text-foreground mb-3 transition-colors">
+              {specialty.title}
+            </h3>
+            <p class="text-muted-foreground mb-8 flex-1 group-hover:text-primary-foreground/80 transition-colors">
+              {specialty.description}
+            </p>
+            
+            <div class="mt-auto">
+              <div class="h-12 w-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors duration-300">
+                 <Icon name="tabler:arrow-right" class="w-6 h-6" />
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

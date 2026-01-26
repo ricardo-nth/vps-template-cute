@@ -1,0 +1,109 @@
+---
+interface Props {
+  heading: string;
+  subheading?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  primaryCtaText?: string;
+  primaryCtaHref?: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
+}
+
+const {
+  heading,
+  subheading,
+  imageSrc,
+  imageAlt = "Page hero image",
+  primaryCtaText,
+  primaryCtaHref,
+  secondaryCtaText,
+  secondaryCtaHref,
+} = Astro.props as Props;
+---
+
+<section class="relative overflow-hidden bg-accent-secondary/30">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid lg:grid-cols-2 min-h-[60vh] lg:min-h-[70vh]">
+      
+      <!-- Content Column -->
+      <div class="flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 text-center lg:text-left">
+        <div class="max-w-xl mx-auto lg:mx-0">
+            <h1 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] tracking-tight text-foreground mb-6 text-balance">
+            <Fragment set:html={heading} />
+            </h1>
+            {subheading && (
+            <p class="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 text-balance">
+                <Fragment set:html={subheading} />
+            </p>
+            )}
+            
+            {(primaryCtaText || secondaryCtaText) && (
+            <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                {primaryCtaText && primaryCtaHref && (
+                <a 
+                    href={primaryCtaHref} 
+                    class="inline-flex items-center justify-center rounded-full bg-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-lg transition-all hover:bg-primary/90 hover:scale-105"
+                >
+                    {primaryCtaText}
+                </a>
+                )}
+                {secondaryCtaText && secondaryCtaHref && (
+                <a 
+                    href={secondaryCtaHref} 
+                    class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-base font-semibold text-foreground shadow-sm border border-border transition-all hover:bg-gray-50"
+                >
+                    {secondaryCtaText}
+                </a>
+                )}
+            </div>
+            )}
+        </div>
+      </div>
+      
+      <!-- Visual Column -->
+      <div class="relative flex items-center justify-center py-12 lg:py-0 px-6 lg:px-0">
+         {Astro.slots.has('visual') ? (
+          <div class="relative w-full h-full flex items-center justify-center">
+             <!-- Decorative circles for Visual Slot -->
+             <div class="absolute w-[40%] aspect-square rounded-full bg-accent/20" style="right: 5%; top: 15%;"></div>
+             <div class="absolute w-[25%] aspect-square rounded-full bg-primary/20" style="left: 5%; bottom: 15%;"></div>
+             
+            <!-- Decorative backdrop shape for Visual Slot -->
+             <div class="relative z-10">
+              <slot name="visual" />
+            </div>
+          </div>
+        ) : (
+            <>
+                <!-- Large teal circle background -->
+                <div
+                class="absolute w-[85%] aspect-square rounded-full bg-teal/40"
+                style="left: 5%; top: 50%; transform: translateY(-50%);"
+                ></div>
+
+                <!-- Smaller accent circle background -->
+                <div
+                class="absolute w-[40%] aspect-square rounded-full bg-accent/20"
+                style="right: -10%; top: 10%;"
+                ></div>
+
+                <!-- Even smaller primary circle background -->
+                <div
+                class="absolute w-[25%] aspect-square rounded-full bg-primary/20"
+                style="left: -10%; bottom: 10%;"
+                ></div>
+
+                <div class="relative w-[80%] aspect-square max-w-[500px]">
+                <img
+                    src={imageSrc}
+                    alt={imageAlt}
+                    class="w-full h-full object-cover rounded-full shadow-xl z-10 bg-white"
+                />
+                </div>
+            </>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

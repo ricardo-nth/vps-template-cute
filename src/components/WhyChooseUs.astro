@@ -1,0 +1,73 @@
+---
+/**
+ * WhyChooseUs.astro - Why Choose Us section (BeyondFS style)
+ *
+ * Gradient primary background with numbered cards (01, 02, 03).
+ */
+
+interface Point {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  heading?: string;
+  points?: Point[];
+  id?: string;
+}
+
+const {
+  heading = "Why Choose [Business Name]",
+  id = "why-us",
+  points = [
+    {
+      title: "[Differentiator 1 - What makes you unique]",
+      description: "[Explanation of this differentiator - why it matters to your clients]"
+    },
+    {
+      title: "[Differentiator 2 - Your approach or values]",
+      description: "[Explanation of this differentiator - how it benefits your clients]"
+    },
+    {
+      title: "[Differentiator 3 - Quality or outcome focus]",
+      description: "[Explanation of this differentiator - the results clients can expect]"
+    },
+  ],
+} = Astro.props as Props;
+
+// Format number with leading zero
+const formatNumber = (n: number) => n.toString().padStart(2, '0');
+---
+
+<section id={id} class="relative overflow-hidden">
+  <!-- Gradient background from primary to lighter primary -->
+  <div class="bg-gradient-to-r from-primary via-primary to-primary/70 px-6 sm:px-12 lg:px-16 py-20 lg:py-32 rounded-3xl mx-4 sm:mx-8 lg:mx-16 my-16 lg:my-24">
+
+    <!-- Heading -->
+    <h2 class="text-3xl sm:text-4xl font-bold text-primary-foreground tracking-tight mb-12">
+      {heading}
+    </h2>
+
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-3 gap-6">
+      {points.map((point, index) => (
+        <div class="bg-primary/20 backdrop-blur-sm p-8 rounded-lg">
+          <!-- Number -->
+          <span class="block text-4xl font-bold text-primary-foreground/80 mb-4">
+            {formatNumber(index + 1)}
+          </span>
+
+          <!-- Title -->
+          <h3 class="text-lg font-bold text-primary-foreground mb-3">
+            {point.title}
+          </h3>
+
+          <!-- Description -->
+          <p class="text-primary-foreground/80 text-sm leading-relaxed">
+            {point.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,84 @@
+---
+import Icon from './Icon.astro';
+
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  heading?: string;
+  subheading?: string;
+  features?: Feature[];
+}
+
+const {
+  heading = "Quality, Consistency, Long-Term Impact",
+  subheading = "We're building a sustainable business based on quality, not quick fixes. Every service is shaped around individual needs with culturally-sensitive, family-centric approaches.",
+  features = [
+    {
+      icon: "tabler:heart-handshake",
+      title: "Family-Centric Model",
+      description: "We work alongside families and carers, providing respite and support to sustain the whole care ecosystem."
+    },
+    {
+      icon: "tabler:user-check",
+      title: "Culturally-Sensitive",
+      description: "We fill a vital gap by delivering culturally-competent support that respects diversity and meets all community needs."
+    },
+    {
+      icon: "tabler:shield-check",
+      title: "Regulatory Excellence",
+      description: "Built from the ground up with compliance and best practice at the core – meeting the highest standards of care."
+    },
+    {
+      icon: "tabler:award",
+      title: "Highest Training Standards",
+      description: "Our staff receive specialist training in PBS, trauma-informed practice, and complex health needs."
+    },
+    {
+      icon: "tabler:bulb",
+      title: "Behaviour-Led Practice",
+      description: "We understand behaviour as communication, using positive strategies that really work."
+    },
+    {
+      icon: "tabler:home",
+      title: "Community-Based Support",
+      description: "Specialist support in ordinary housing – helping individuals thrive in their local Beeston community."
+    }
+  ]
+} = Astro.props as Props;
+---
+
+<section class="bg-background py-24 lg:py-32" id="features">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20">
+      <h2 class="text-h2 text-foreground mb-6 text-balance">
+        {heading}
+      </h2>
+      <p class="mx-auto max-w-3xl text-body-lg text-balance">
+        {subheading}
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature, index) => (
+        <div class="group relative overflow-hidden rounded-[2.5rem] bg-card p-10 border border-border hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+          
+          <div class="relative flex flex-col items-center text-center h-full">
+            <div class="inline-flex h-20 w-20 items-center justify-center rounded-2xl bg-primary text-primary-foreground mb-6 transition-all duration-300">
+              <Icon name={feature.icon} class="h-10 w-10" />
+            </div>
+            <h3 class="text-h3 text-card-foreground mb-4 group-hover:text-teal transition-colors text-balance">
+              {feature.title}
+            </h3>
+            <p class="text-body flex-1 text-balance">
+              {feature.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
