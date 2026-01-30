@@ -7,6 +7,7 @@ interface Specialty {
   icon: string;
   imageSrc: string;
   features: string[];
+  href?: string;
 }
 
 interface Props {
@@ -21,7 +22,7 @@ const {
   specialties = [
     {
       title: "Learning Disabilities",
-      description: "Specialist support for adults with learning disabilities, focusing on skill-building, positive behaviour support, and community engagement in Beeston and Broxtowe.",
+      description: "Specialist support for adults with learning disabilities, focusing on skill-building, positive behaviour support, and community engagement in [Your Area].",
       icon: "tabler:bulb",
       imageSrc: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80",
       features: ["Positive Behaviour Support", "Skill acquisition", "Community inclusion"]
@@ -93,14 +94,18 @@ const {
             <p class="text-muted-foreground flex-1 group-hover:text-primary-foreground/80 transition-colors">
               {specialty.description}
             </p>
-            
-            <!-- Uncomment when service detail pages are added
-            <div class="mt-auto">
-              <div class="h-12 w-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center group-hover:bg-black group-hover:text-white transition-colors duration-300">
-                 <Icon name="tabler:arrow-right" class="w-6 h-6" />
+
+            {specialty.href && (
+              <div class="mt-6">
+                <a
+                  href={specialty.href}
+                  class="inline-flex items-center gap-2 text-primary font-semibold group-hover:text-primary-foreground transition-colors"
+                >
+                  Learn more
+                  <Icon name="tabler:arrow-right" class="w-5 h-5" />
+                </a>
               </div>
-            </div>
-            -->
+            )}
           </div>
         </div>
       ))}

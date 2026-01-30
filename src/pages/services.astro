@@ -8,6 +8,52 @@ import CompliancePillars from '@components/CompliancePillars.astro';
 import CareDeliveryProcess from '@components/CareDeliveryProcess.astro';
 import ContactSection from '@components/ContactSection.astro';
 
+const serviceSpecialties = [
+  {
+    title: "Learning Disabilities",
+    description: "Specialist support for adults with learning disabilities, focusing on skill-building, positive behaviour support, and community engagement in [Your Area].",
+    icon: "tabler:bulb",
+    imageSrc: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80",
+    features: ["Positive Behaviour Support", "Skill acquisition", "Community inclusion"],
+    href: "/services/learning-disability-support"
+  },
+  {
+    title: "Autism & Neurodiversity",
+    description: "Structured, sensory-aware environments with specialist staff training. Culturally-competent support tailored to neurodiverse needs within minority communities.",
+    icon: "tabler:puzzle",
+    imageSrc: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80",
+    features: ["Sensory-friendly approach", "Routine support", "Culturally-sensitive care"]
+  },
+  {
+    title: "Mental Health Support",
+    description: "Recovery-focused support for adults with enduring mental health needs. Crisis prevention, emotional wellbeing, and trauma-informed outreach.",
+    icon: "tabler:brain",
+    imageSrc: "https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=800&q=80",
+    features: ["Recovery model", "Crisis prevention", "Trauma-informed care"]
+  },
+  {
+    title: "Dual Diagnosis",
+    description: "Specialist support for individuals with both learning disabilities and mental health needs – an area where most local providers lack expertise.",
+    icon: "tabler:heart-handshake",
+    imageSrc: "https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=800&q=80",
+    features: ["Integrated care plans", "Specialist training", "Behaviour support"]
+  },
+  {
+    title: "Behaviours That Challenge",
+    description: "Positive Behaviour Support approaches for individuals with complex behaviours. Crisis-prevention and community-based interventions in ordinary housing.",
+    icon: "tabler:shield-check",
+    imageSrc: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&w=800&q=80",
+    features: ["PBS approach", "Specialist staff", "Crisis prevention"]
+  },
+  {
+    title: "Carer & Family Support",
+    description: "Planned respite, carer-wellbeing visits, and crisis-prevention support. We work alongside families to sustain the whole care ecosystem.",
+    icon: "tabler:users",
+    imageSrc: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80",
+    features: ["Planned respite", "Night sits", "Family support"]
+  }
+];
+
 const metadata = {
   title: `Services | ${siteConfig.name}`,
   description: `[Description of your services - what you offer and who you serve]`,
@@ -74,7 +120,7 @@ const metadata = {
     <SupportedLivingFeatures />
   </section>
 
-  <ServiceSpecialties />
+  <ServiceSpecialties specialties={serviceSpecialties} />
 
   <CompliancePillars />
 
