@@ -1,31 +1,67 @@
-# Cute - Healthcare Website Template
+# Cute Healthcare Template
 
-A warm, rounded, and approachable Astro.js template designed for healthcare and care agencies.
+A friendly, approachable Astro.js template for healthcare and care agencies with soft, welcoming design elements.
+
+🔗 **Live Demo:** https://vps-template-cute.vercel.app
+
+## Features
+
+- Astro 5.x
+- Tailwind CSS v4
+- TypeScript
+- SEO optimized
+- Responsive design
+- Accessibility focused
 
 ## Quick Start
 
-1. Click "Use This Template" on GitHub
+1. Click **Use This Template** on GitHub
 2. Clone your new repository
-3. Run `pnpm install`
-4. Update `src/config/site.ts` with your business details
-5. Replace placeholder content in pages and components
-6. Run `pnpm dev` to preview
+3. Install dependencies: `pnpm install`
+4. Start the dev server: `pnpm dev`
+5. Update `src/config/site.ts` with your business details
 
 ## Customization Checklist
 
-- [ ] Update site.ts with your business name and description
-- [ ] Replace [Business Name] placeholders throughout
-- [ ] Add your contact details
-- [ ] Update services and about content
+- [ ] Update `src/config/site.ts`
+- [ ] Replace [Business Name] throughout
+- [ ] Add your contact details ([Your Phone], [Your Email])
+- [ ] Update service specialties content
+- [ ] Customize location placeholders ([Your City], [Your Region])
 - [ ] Add real testimonials
-- [ ] Replace placeholder images with your own
-- [ ] Update favicon and logo
+- [ ] Replace placeholder images
+- [ ] Update branding
 
-## Need Help?
+## Project Structure
 
-**Want this template professionally customized for your business?**
+```
+.
+├── public/            # Static assets
+├── src/
+│   ├── assets/        # Local images and media
+│   ├── components/    # Reusable UI components
+│   ├── config/        # Site configuration
+│   ├── layouts/       # Layout templates
+│   ├── pages/         # Route pages
+│   └── styles/        # Global styles
+└── astro.config.mjs   # Astro configuration
+```
 
-Visit [vertexplatformsolutions.com/offers/healthcare-agencies](https://vertexplatformsolutions.com/offers/healthcare-agencies) to get your website built and hosted - you just provide content, we handle everything else.
+## Service Detail Pages
+
+Explore the learning disability support example at:
+
+`/services/learning-disability-support`
+
+## Available Scripts
+
+- `pnpm dev` — Run the development server
+- `pnpm build` — Build for production
+- `pnpm preview` — Preview the production build
+
+## Need Professional Help?
+
+https://vertexplatformsolutions.com/offers/healthcare-agencies
 
 ## Tech Stack
 
@@ -35,4 +71,4 @@ Visit [vertexplatformsolutions.com/offers/healthcare-agencies](https://vertexpla
 
 ## License
 
-MIT - Use freely for personal or commercial projects.
+MIT
