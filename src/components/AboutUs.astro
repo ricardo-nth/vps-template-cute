@@ -5,7 +5,9 @@
  * Split layout with section label, dash accent, and underlined link CTA.
  */
 
+import { Image } from 'astro:assets';
 import Eyebrow from './Eyebrow.astro';
+import careFacility from '@assets/images/care-facility.jpg';
 
 interface Props {
   eyebrow?: string;
@@ -13,7 +15,7 @@ interface Props {
   description?: string;
   ctaText?: string;
   ctaHref?: string;
-  imageSrc?: string;
+  imageSrc?: any;
   imageAlt?: string;
   sectionId?: string;
 }
@@ -24,7 +26,7 @@ const {
   description = "[Your company story - who you are, what you do, and why you're different. 2-3 sentences that capture your mission and values.]",
   ctaText = "Explore Our Story",
   ctaHref = "/about",
-  imageSrc = "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=900&q=80",
+  imageSrc = careFacility,
   imageAlt = "[Describe your about section image]",
   sectionId = "about"
 } = Astro.props;
@@ -62,7 +64,7 @@ const {
 
     <!-- Image Column -->
     <div class="relative min-h-[400px] lg:min-h-0">
-      <img
+      <Image
         src={imageSrc}
         alt={imageAlt}
         class="absolute inset-0 w-full h-full object-cover"

@@ -1,11 +1,14 @@
 ---
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 import Eyebrow from './Eyebrow.astro';
+import teamPortrait from '@assets/images/team-portrait.jpg';
 
 interface TeamMember {
   name: string;
   role: string;
   description: string;
-  image: string;
+  image: any;
   imageAlt?: string;
   credentials?: string;
 }
@@ -27,7 +30,7 @@ const {
       role: "Clinical Director",
       credentials: "MBBS, MRCGP",
       description: "With over 15 years of experience in palliative medicine, Dr. Patel leads our clinical strategy with a focus on holistic patient well-being.",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80",
+      image: teamPortrait,
       imageAlt: "Dr. Amina Patel",
     },
     {
@@ -35,7 +38,7 @@ const {
       role: "Head of Nursing",
       credentials: "RN, MSc Advanced Practice",
       description: "James oversees our nursing teams, ensuring that every patient receives safe, effective, and dignified care at home.",
-      image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80",
+      image: teamPortrait,
       imageAlt: "James Miller",
     },
     {
@@ -43,7 +46,7 @@ const {
       role: "Operations Manager",
       credentials: "MBA, Health Management",
       description: "Grace ensures the smooth running of our services, coordinating complex care packages and maintaining our CQC compliance.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+      image: teamPortrait,
       imageAlt: "Grace Okafor",
     },
   ],
@@ -67,7 +70,7 @@ const {
         <div class="group relative">
           <!-- Image Container -->
           <div class="relative aspect-[3/3.2] overflow-hidden rounded-2xl bg-muted mb-6">
-            <img
+            <Image
               src={member.image}
               alt={member.imageAlt || member.name}
               class="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
@@ -80,11 +83,9 @@ const {
             <!-- Social/Contact Overlay (Optional) -->
             <div class="absolute bottom-4 left-4 right-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
               <div class="flex justify-center gap-2">
-                <a href="#" class="p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-primary transition-colors">
+                <a href="#" class="p-2 bg-white/20 backdrop-blur-md rounded-full text-white hover:bg-white hover:text-primary transition-colors" aria-label={`${member.name}'s LinkedIn profile (coming soon)`}>
                   <span class="sr-only">LinkedIn</span>
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd" />
-                  </svg>
+                  <Icon name="tabler:brand-linkedin" size="20" />
                 </a>
               </div>
             </div>

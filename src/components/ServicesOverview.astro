@@ -5,6 +5,7 @@
  * Blocky cards with plant/flower icons, numbered titles, and pill buttons.
  */
 
+import { Icon } from 'astro-icon/components';
 import Eyebrow from './Eyebrow.astro';
 
 interface Service {
@@ -74,60 +75,15 @@ const {
         <div class={`bg-accent-secondary/30 rounded-xl p-8 lg:p-10 border-b-4 border-teal ${index === 2 ? 'md:col-span-2' : ''}`}>
 
           <!-- Plant/Flower Icon -->
-          <div class="mb-6 w-20 h-20">
+          <div class="mb-6 w-20 h-20 text-teal">
             {service.icon === 'seedling' && (
-              <!-- Seedling: Growing plant in pot - represents home growth -->
-              <svg viewBox="0 0 64 64" class="w-full h-full text-teal" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <!-- Pot -->
-                <path d="M20 42 L44 42 L40 56 L24 56 Z" />
-                <!-- Soil line -->
-                <path d="M22 42 L42 42" />
-                <!-- Stem -->
-                <path d="M32 42 L32 28" />
-                <!-- Left leaf -->
-                <path d="M32 34 C26 34 22 28 22 22 C28 22 32 28 32 34" fill="currentColor" opacity="0.15" />
-                <!-- Right leaf -->
-                <path d="M32 28 C38 28 44 22 44 14 C38 14 32 22 32 28" fill="currentColor" opacity="0.15" />
-                <!-- Small sprout at top -->
-                <circle cx="32" cy="24" r="2" fill="currentColor" opacity="0.3" />
-              </svg>
+              <Icon name="tabler:plant-2" size="80" class="w-full h-full" />
             )}
             {service.icon === 'tree' && (
-              <!-- Tree: Branching tree - represents community connections -->
-              <svg viewBox="0 0 64 64" class="w-full h-full text-teal" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <!-- Trunk -->
-                <path d="M32 58 L32 36" />
-                <!-- Main branches -->
-                <path d="M32 36 L20 24" />
-                <path d="M32 36 L44 24" />
-                <path d="M32 42 L24 34" />
-                <path d="M32 42 L40 34" />
-                <!-- Leaves/circles at branch ends -->
-                <circle cx="20" cy="20" r="6" fill="currentColor" opacity="0.15" />
-                <circle cx="44" cy="20" r="6" fill="currentColor" opacity="0.15" />
-                <circle cx="24" cy="30" r="5" fill="currentColor" opacity="0.15" />
-                <circle cx="40" cy="30" r="5" fill="currentColor" opacity="0.15" />
-                <circle cx="32" cy="14" r="7" fill="currentColor" opacity="0.15" />
-                <!-- Center top branch -->
-                <path d="M32 36 L32 20" />
-              </svg>
+              <Icon name="tabler:tree" size="80" class="w-full h-full" />
             )}
             {service.icon === 'lotus' && (
-              <!-- Lotus: Peaceful flower - represents calm and respite -->
-              <svg viewBox="0 0 64 64" class="w-full h-full text-teal" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <!-- Center petal -->
-                <ellipse cx="32" cy="28" rx="6" ry="14" fill="currentColor" opacity="0.15" />
-                <!-- Left petals -->
-                <ellipse cx="22" cy="32" rx="5" ry="12" transform="rotate(-30 22 32)" fill="currentColor" opacity="0.15" />
-                <ellipse cx="14" cy="38" rx="4" ry="10" transform="rotate(-50 14 38)" fill="currentColor" opacity="0.15" />
-                <!-- Right petals -->
-                <ellipse cx="42" cy="32" rx="5" ry="12" transform="rotate(30 42 32)" fill="currentColor" opacity="0.15" />
-                <ellipse cx="50" cy="38" rx="4" ry="10" transform="rotate(50 50 38)" fill="currentColor" opacity="0.15" />
-                <!-- Water line -->
-                <path d="M8 48 Q20 44 32 48 Q44 52 56 48" />
-                <!-- Small ripple -->
-                <path d="M16 52 Q32 48 48 52" opacity="0.5" />
-              </svg>
+              <Icon name="tabler:flower-burst" size="80" class="w-full h-full" />
             )}
           </div>
 
