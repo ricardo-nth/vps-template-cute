@@ -1,5 +1,5 @@
 ---
-import Icon from './Icon.astro';
+import { Icon } from 'astro-icon/components';
 import Eyebrow from './Eyebrow.astro';
 
 interface Props {
@@ -100,7 +100,7 @@ const {
                 <p class="text-muted-foreground leading-relaxed">
                   {address}
                 </p>
-                <a href="#" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-teal hover:gap-2 transition-all">
+                <a href="#" class="inline-flex items-center gap-1 mt-4 text-sm font-semibold text-teal hover:gap-2 transition-all" aria-label="Get directions (coming soon)">
                   Get Directions
                   <Icon name="tabler:arrow-right" size="16" />
                 </a>

@@ -1,8 +1,12 @@
 ---
+import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
+import heroBg from '@assets/images/hero-bg.jpg';
+
 interface Props {
   heading?: string;
   subheading?: string;
-  imageSrc?: string;
+  imageSrc?: any;
   imageAlt?: string;
   ctaText?: string;
   ctaHref?: string;
@@ -13,7 +17,7 @@ interface Props {
 const {
   heading = "[Your Main Headline - What You Do]",
   subheading = "[Your value proposition - describe your services and who you serve in 1-2 sentences]",
-  imageSrc = "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  imageSrc = heroBg,
   imageAlt = "[Describe your hero image]",
   ctaText = "Get in Touch",
   ctaHref = "/contact",
@@ -52,9 +56,7 @@ const {
             <!-- Star Rating -->
             <div class="flex items-center gap-1">
               {[1, 2, 3, 4, 5].map(() => (
-                <svg class="w-5 h-5 text-accent fill-current" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
+                <Icon name="tabler:star-filled" class="w-5 h-5 text-accent" />
               ))}
               <span class="ml-2 font-bold text-foreground">{rating}</span>
             </div>
@@ -90,7 +92,7 @@ const {
 
         <!-- Circular image (overlapping the mint circle) -->
         <div class="relative w-[80%] aspect-square max-w-[500px]">
-          <img
+          <Image
             src={imageSrc}
             alt={imageAlt}
             class="w-full h-full object-cover rounded-full"
