@@ -1,8 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import featuredSection from '@assets/images/featured-section.jpg';
+
 interface Props {
   heading: string;
   subheading?: string;
-  imageSrc?: string;
+  imageSrc?: any;
   imageAlt?: string;
   primaryCtaText?: string;
   primaryCtaHref?: string;
@@ -13,7 +16,7 @@ interface Props {
 const {
   heading,
   subheading,
-  imageSrc,
+  imageSrc = featuredSection,
   imageAlt = "Page hero image",
   primaryCtaText,
   primaryCtaHref,
@@ -95,7 +98,7 @@ const {
                 ></div>
 
                 <div class="relative w-[80%] aspect-square max-w-[500px]">
-                <img
+                <Image
                     src={imageSrc}
                     alt={imageAlt}
                     class="w-full h-full object-cover rounded-full shadow-xl z-10 bg-white"

@@ -1,9 +1,12 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { Image } from 'astro:assets';
 import SiteLayout from '@layouts/SiteLayout.astro';
 import TeamSection from '@components/TeamSection.astro';
 import PageHero from '@components/PageHero.astro';
 import Eyebrow from '@components/Eyebrow.astro';
+import aboutTeam from '@assets/images/about-team.jpg';
+import residentialCare from '@assets/images/residential-care.jpg';
 
 const metadata = {
   title: 'About Us | [Business Name]',
@@ -97,9 +100,9 @@ const missionStory = {
         </div>
       </div>
       <div class="relative h-full min-h-[400px] order-1 lg:order-2">
-        <img 
-          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" 
-          alt="Office environment" 
+        <Image
+          src={aboutTeam}
+          alt="Office environment"
           class="absolute inset-0 w-full h-full object-cover"
         />
       </div>
@@ -108,9 +111,9 @@ const missionStory = {
     <!-- Mission Story Block -->
     <div class="grid lg:grid-cols-2">
       <div class="relative h-full min-h-[400px]">
-        <img 
-          src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" 
-          alt="Care team collaboration" 
+        <Image
+          src={residentialCare}
+          alt="Care team collaboration"
           class="absolute inset-0 w-full h-full object-cover"
         />
       </div>
