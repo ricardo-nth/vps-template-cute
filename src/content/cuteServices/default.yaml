@@ -1,0 +1,103 @@
+metadata:
+  title: Services - Harbor Care Services
+  description: Explore supported living and domiciliary care pathways delivered with clear governance, continuity of teams, and measurable outcomes.
+  schema:
+    '@context': https://schema.org
+    '@type': CollectionPage
+    name: Harbor Care Services
+    description: Explore supported living and domiciliary care pathways delivered with clear governance, continuity of teams, and measurable outcomes.
+hero:
+  heading: Care Pathways Designed for Real-World Delivery
+  subheading: From tenancy-based support to home visits, every package is structured around safety, continuity, and measurable progress.
+  primaryCtaText: Enquire Today
+  primaryCtaHref: /contact
+  secondaryCtaText: Explore Service Types
+  secondaryCtaHref: '#features'
+  imageKey: unsplash-approach
+  imageAlt: Care team discussing support pathways with a family
+servicesOverview:
+  eyebrow: Service Categories
+  heading: Supported Living Service Lines
+  intro: Our supported living model combines tenancy support, life-skills coaching, and structured review cycles.
+  services:
+    - title: Tenancy and Daily Living Support
+      description: Core tenancy support covering routines, risk planning, and independent living milestones.
+      href: /services/learning-disability-support
+      ctaText: Learn more
+      icon: seedling
+    - title: Life Skills Development
+      description: Coaching for cooking, budgeting, household routines, and safe independent decision-making.
+      href: /services/learning-disability-support
+      ctaText: Learn more
+      icon: tree
+    - title: Community Access
+      description: Support for appointments, shopping, and social routines that build confidence.
+      href: /services/learning-disability-support
+      ctaText: Learn more
+      icon: lotus
+supportedLivingFeatures:
+  heading: Supported Living Done Right
+  subheading: Support designed to balance independence goals with safeguarding, structure, and quality assurance.
+  features:
+    - icon: tabler:home
+      title: Independence First
+      description: Support delivered in real homes with practical goals around autonomy and routine confidence.
+    - icon: tabler:user-check
+      title: Co-Produced Outcome Plans
+      description: Plans are built with service users and reviewed with families and professionals.
+    - icon: tabler:shield-check
+      title: CQC-Aligned Governance
+      description: Documentation, audits, and supervision frameworks support inspection-ready practice.
+serviceSpecialties:
+  heading: Specialist Care Pathways
+  subheading: Dedicated streams for complex supported living needs.
+  specialties:
+    - title: Learning Disabilities
+      description: Goal-led support focused on communication, confidence, and meaningful participation.
+      icon: tabler:bulb
+      imageKey: unsplash-healthcare-1
+      features:
+        - Skill acquisition
+        - Community integration
+        - Communication support
+      href: /services/learning-disability-support
+    - title: Autism and Neurodiversity
+      description: Structured, sensory-aware support that improves predictability and wellbeing.
+      icon: tabler:puzzle
+      imageKey: unsplash-healthcare-2
+      features:
+        - Sensory-aware routines
+        - Anxiety reduction planning
+        - Specialist-trained teams
+    - title: Mental Health Support
+      description: Recovery-oriented pathways linking daily routines to emotional wellbeing and stability.
+      icon: tabler:brain
+      imageKey: unsplash-healthcare-3
+      features:
+        - Recovery planning
+        - Relapse prevention
+        - Emotional resilience
+compliancePillars:
+  heading: Inspection-Ready Quality Standards
+  subheading: Delivery combines person-centred care with operational discipline that stands up to scrutiny.
+  pillars:
+    - icon: tabler:shield-check
+      title: Safe
+      description: Structured safeguarding and risk controls embedded in daily practice.
+    - icon: tabler:target-arrow
+      title: Effective
+      description: Outcome-linked plans are reviewed with service users and stakeholders.
+    - icon: tabler:heart-handshake
+      title: Caring
+      description: Respectful, dignified support tailored to communication needs.
+    - icon: tabler:list-details
+      title: Responsive
+      description: Teams adapt quickly when health or personal circumstances change.
+contactSection:
+  heading: Build the Right Package for Your Referral
+  intro: Share your requirements and we will map a practical support pathway aligned to outcomes and continuity.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB

@@ -1,16 +1,21 @@
 ---
 import { Image } from 'astro:assets';
 import featuredSection from '@assets/images/featured-section.jpg';
+import { careProfileConfig } from '@/config/site';
 
 interface Props {
   heading: string;
   subheading?: string;
-  imageSrc?: any;
+  imageSrc?: ImageMetadata;
   imageAlt?: string;
   primaryCtaText?: string;
   primaryCtaHref?: string;
   secondaryCtaText?: string;
   secondaryCtaHref?: string;
+  profileContent?: {
+    'supported-living'?: { heading?: string; subheading?: string };
+    'dom-care'?: { heading?: string; subheading?: string };
+  };
 }
 
 const {
@@ -22,21 +27,25 @@ const {
   primaryCtaHref,
   secondaryCtaText,
   secondaryCtaHref,
-} = Astro.props as Props;
+  profileContent = {},
+} = Astro.props;
+
+const instanceId = `page-hero-${Math.random().toString(36).slice(2, 9)}`;
+const { defaultProfile } = careProfileConfig;
 ---
 
-<section class="relative overflow-hidden bg-accent-secondary/30">
+<section id={instanceId} class="relative overflow-hidden bg-accent-secondary/30" data-care-profile-content>
   <div class="max-w-7xl mx-auto">
     <div class="grid lg:grid-cols-2 min-h-[60vh] lg:min-h-[70vh]">
       
       <!-- Content Column -->
       <div class="flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 text-center lg:text-left">
         <div class="max-w-xl mx-auto lg:mx-0">
-            <h1 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] tracking-tight text-foreground mb-6 text-balance">
+            <h1 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] tracking-tight text-foreground mb-6 text-balance" data-care-field="heading">
             <Fragment set:html={heading} />
             </h1>
             {subheading && (
-            <p class="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 text-balance">
+            <p class="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 text-balance" data-care-field="subheading">
                 <Fragment set:html={subheading} />
             </p>
             )}
@@ -102,6 +111,7 @@ const {
                     src={imageSrc}
                     alt={imageAlt}
                     class="w-full h-full object-cover rounded-full shadow-xl z-10 bg-white"
+                    loading="eager"
                 />
                 </div>
             </>
@@ -110,3 +120,24 @@ const {
     </div>
   </div>
 </section>
+
+<script is:inline define:vars={{ profileContent, instanceId, defaultProfile }}>
+  (() => {
+    const root = document.getElementById(instanceId);
+    if (!root || !profileContent || Object.keys(profileContent).length === 0) return;
+
+    const apply = (profile) => {
+      const data = profileContent[profile];
+      if (!data) return;
+      const headingNode = root.querySelector('[data-care-field="heading"]');
+      const subheadingNode = root.querySelector('[data-care-field="subheading"]');
+      if (headingNode && data.heading) headingNode.innerHTML = data.heading;
+      if (subheadingNode && data.subheading) subheadingNode.innerHTML = data.subheading;
+    };
+
+    apply(document.documentElement.dataset.careProfile || defaultProfile);
+    window.addEventListener('care-profile-change', (event) => {
+      apply(event.detail?.profile || defaultProfile);
+    });
+  })();
+</script>

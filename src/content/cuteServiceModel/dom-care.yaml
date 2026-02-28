@@ -1,0 +1,49 @@
+metadata:
+  title: Our Home Care Model - Harbor Home Care
+  description: Learn how Harbor Home Care delivers reliable domiciliary services through continuity-led rostering, safeguarding governance, and review-led improvements.
+  schema:
+    '@context': https://schema.org
+    '@type': WebPage
+    name: Our Home Care Model
+hero:
+  heading: Our Home Care Model, Built for Reliability
+  subheading: We combine person-centred planning, continuity of carers, and strong operational controls to deliver dependable support at home.
+  primaryCtaText: Contact Us
+  primaryCtaHref: /contact
+  secondaryCtaText: Our Principles
+  secondaryCtaHref: '#values'
+  imageKey: unsplash-approach
+  imageAlt: Domiciliary managers reviewing quality and scheduling
+whyChooseUs:
+  heading: Why Our Domiciliary Model Works
+  points:
+    - title: Reliable Visit Planning
+      description: Schedules and contingencies are designed to reduce missed visits and disruption.
+    - title: Continuity of Carers
+      description: Familiar carers improve trust, communication, and routine quality.
+    - title: Safe Governance
+      description: Safeguarding, supervision, and audits are embedded in day-to-day operations.
+clientJourney:
+  heading: Our Home Care Journey
+  subheading: A practical framework that keeps visits reliable, communication clear, and outcomes measurable.
+  steps:
+    - title: Home Assessment
+      description: We assess routines, risks, and support priorities with clients and families.
+      icon: tabler:home-search
+    - title: Visit Plan Design
+      description: We agree visit windows, support tasks, medication workflows, and escalation pathways.
+      icon: tabler:file-text
+    - title: Carer Matching
+      description: We assign compatible carers to maximise continuity and relationship trust.
+      icon: tabler:users-group
+    - title: Monitoring and Review
+      description: We monitor outcomes, punctuality, and communication standards and adapt when needs change.
+      icon: tabler:refresh
+contactSection:
+  heading: Build a Reliable Home Care Package
+  intro: Share your care requirements and we will map a domiciliary model designed for routine stability and reassurance.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB

@@ -1,0 +1,102 @@
+metadata:
+  title: Domiciliary Care Services - Harbor Home Care
+  description: Explore domiciliary care services delivered through reliable home visits, continuity of carers, and practical outcome-focused support.
+  schema:
+    '@context': https://schema.org
+    '@type': CollectionPage
+    name: Domiciliary Care Services
+    description: Explore domiciliary care services delivered through reliable home visits, continuity of carers, and practical outcome-focused support.
+hero:
+  heading: Domiciliary Care Services
+  subheading: Reliable home support for adults who need consistent visits, safer routines, and practical daily help.
+  primaryCtaText: Enquire Today
+  primaryCtaHref: /contact
+  secondaryCtaText: Explore Service Types
+  secondaryCtaHref: '#features'
+  imageKey: unsplash-approach
+  imageAlt: Domiciliary care professional supporting an adult at home
+servicesOverview:
+  eyebrow: Home Care Categories
+  heading: Practical Support Delivered in Familiar Settings
+  intro: Services are designed around routine reliability, safeguarding confidence, and clear communication with families.
+  services:
+    - title: Personal Care Visits
+      description: Respectful support with washing, dressing, hygiene, and dignity-led routines.
+      href: /contact
+      ctaText: Learn more
+      icon: seedling
+    - title: Medication Support
+      description: Prompting and administration support with documented records and escalation pathways.
+      href: /contact
+      ctaText: Learn more
+      icon: tree
+    - title: Meal and Wellbeing Support
+      description: Help with nutrition, hydration, companionship, and daily routine consistency.
+      href: /contact
+      ctaText: Learn more
+      icon: lotus
+supportedLivingFeatures:
+  heading: Domiciliary Care Done Right
+  subheading: Home support with continuity, safeguarding standards, and communication families can trust.
+  features:
+    - icon: tabler:home-heart
+      title: Care in Familiar Surroundings
+      description: Support is delivered at home to protect comfort and routine confidence.
+    - icon: tabler:clock-24
+      title: Reliable Visit Windows
+      description: Continuity-led rostering and backup planning improve dependability.
+    - icon: tabler:message-circle
+      title: Family Communication
+      description: Updates are clear, timely, and actionable for relatives and professionals.
+serviceSpecialties:
+  heading: Domiciliary Specialties
+  subheading: Specialist home-care pathways designed around safety, routine, and independence at home.
+  specialties:
+    - title: Complex Medication Routines
+      description: Structured medication support for multi-prescription and time-sensitive regimens.
+      icon: tabler:pill
+      imageKey: unsplash-healthcare-4
+      features:
+        - Medication records
+        - Prompt and administration support
+        - Clinical escalation pathways
+    - title: Dementia Home Support
+      description: Familiar, routine-led care designed to reduce distress and maintain confidence.
+      icon: tabler:brain
+      imageKey: unsplash-healthcare-5
+      features:
+        - Consistent carers
+        - Memory-friendly communication
+        - Family partnership updates
+    - title: Recovery and Reablement
+      description: Goal-focused support after illness or discharge to rebuild confidence and routine.
+      icon: tabler:activity
+      imageKey: unsplash-healthcare-6
+      features:
+        - Recovery goals
+        - Daily living progression
+        - Review-based adaptation
+compliancePillars:
+  heading: Home Care Quality Assurance
+  subheading: Domiciliary delivery backed by governance, supervision, and measurable outcomes.
+  pillars:
+    - icon: tabler:shield-check
+      title: Safe
+      description: Robust risk controls and safeguarding practice embedded in every package.
+    - icon: tabler:target-arrow
+      title: Effective
+      description: Care plans are linked to practical outcomes and reviewed with stakeholders.
+    - icon: tabler:heart-handshake
+      title: Caring
+      description: Respectful, dignity-led delivery with continuity of familiar carers.
+    - icon: tabler:crown
+      title: Well-Led
+      description: Accountable leadership and supervision sustain quality across all visits.
+contactSection:
+  heading: Arrange Reliable Home Care
+  intro: Share your needs and we will design a domiciliary package built around safety, routine, and reassurance.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB

@@ -2,15 +2,25 @@
 import Icon from './Icon.astro';
 
 interface Props {
+  badgeLabel?: string;
+  heading?: string;
+  intro?: string;
+  officeLabel?: string;
   address?: string;
   mapUrl?: string;
   directionsUrl?: string;
+  directionsText?: string;
 }
 
 const {
+  badgeLabel = "Visit Us",
+  heading = "Our Office",
+  intro = "We welcome visits from families and commissioners. Please call ahead to schedule an appointment with our Registered Manager.",
+  officeLabel = "Head Office",
   address = "[Your City], [Your Region]",
   mapUrl = "[Your Google Maps Embed URL]",
-  directionsUrl = "https://www.google.com/maps/dir//[Your City], [Your Region]"
+  directionsUrl = "https://www.google.com/maps/dir//[Your City], [Your Region]",
+  directionsText = "Get Directions",
 } = Astro.props as Props;
 ---
 
@@ -22,11 +32,11 @@ const {
       <div>
         <div class="inline-flex items-center rounded-full border border-teal/20 bg-teal/5 px-3 py-1 text-sm font-medium text-teal mb-6">
           <span class="flex h-2 w-2 rounded-full bg-teal mr-2"></span>
-          Visit Us
+          {badgeLabel}
         </div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6">Our Office</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6">{heading}</h2>
         <p class="text-lg text-muted-foreground mb-8">
-          We welcome visits from families and commissioners. Please call ahead to schedule an appointment with our Registered Manager.
+          {intro}
         </p>
         
         <div class="flex items-start gap-4 mb-8">
@@ -34,7 +44,7 @@ const {
             <Icon name="tabler:map-pin" class="w-6 h-6" />
           </div>
           <div>
-            <h3 class="font-bold text-foreground text-lg mb-1">Head Office</h3>
+            <h3 class="font-bold text-foreground text-lg mb-1">{officeLabel}</h3>
             <p class="text-muted-foreground text-lg leading-relaxed max-w-xs">
               {address}
             </p>
@@ -48,7 +58,7 @@ const {
           class="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform duration-200"
         >
           <Icon name="tabler:map-2" class="w-5 h-5" />
-          Get Directions
+          {directionsText}
         </a>
       </div>
 

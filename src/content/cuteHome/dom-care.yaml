@@ -1,0 +1,82 @@
+metadata:
+  title: Harbor Home Care Services
+  description: Reliable domiciliary care services with continuity of carers, safe routines, and practical support that helps adults remain independent at home.
+  schema:
+    '@context': https://schema.org
+    '@type': WebPage
+    name: Harbor Home Care Services
+    description: Reliable domiciliary care services with continuity of carers, safe routines, and practical support that helps adults remain independent at home.
+hero:
+  profileContent:
+    supported-living:
+      heading: Supported Living With Clear Independence Outcomes
+      subheading: Structured tenancy support that helps adults build life skills, sustain placements, and participate confidently in their communities.
+    dom-care:
+      heading: Domiciliary Care That Families Can Rely On
+      subheading: Reliable home visits with continuity of carers, safe routines, and communication that keeps everyone informed.
+  description: We deliver domiciliary care with continuity of carers, safe routines, and practical support that helps adults remain independent at home.
+  ctaText: Explore Home Care Services
+  ctaHref: /services
+  imageKey: hero
+  imageAlt: Domiciliary care worker supporting an adult during a home visit
+  socialProofText: 420+ weekly visits delivered with 97% on-time performance
+  rating: '4.9'
+servicesOverview:
+  eyebrow: Domiciliary Services
+  heading: Practical Home Support, Delivered Consistently
+  intro: Every package is built around routine reliability, safeguarding confidence, and communication families can trust.
+  services:
+    - title: Personal Care Visits
+      description: Respectful support with washing, dressing, mobility, and dignity-led daily routines.
+      href: /services
+      ctaText: Learn more
+      icon: seedling
+    - title: Medication Support
+      description: Prompting and administration support with clear records and escalation when needs change.
+      href: /services
+      ctaText: Learn more
+      icon: tree
+    - title: Meal and Wellbeing Support
+      description: Meal preparation, hydration routines, and companionship that reduce isolation.
+      href: /services
+      ctaText: Learn more
+      icon: lotus
+aboutUs:
+  eyebrow: About Harbor Home Care
+  heading: Dependable Delivery With a Human Touch
+  description: Harbor Home Care combines robust governance with practical support in familiar home settings.
+  ctaText: Explore Our Story
+  ctaHref: /about
+  imageKey: care-facility
+  imageAlt: Domiciliary managers reviewing service delivery updates
+whyChooseUs:
+  heading: Continuity, Communication, and Safer Routines
+  points:
+    - title: Continuity-Led Rostering
+      description: Stable carer teams reduce disruption and improve trust.
+    - title: Safe Medication Workflows
+      description: Documented prompts and escalation routes protect service users.
+    - title: Family-First Communication
+      description: Updates are timely, practical, and easy to act on.
+testimonials:
+  eyebrow: Testimonials
+  heading: What Families Say About Our Home Care
+  intro: Feedback from relatives and professionals using our domiciliary support.
+  items:
+    - quote: We finally have home care we can rely on week after week.
+      role: Family Representative
+      company: South London
+    - quote: Their visit updates are clear and fast, which makes a huge difference.
+      role: Daughter of Service User
+      company: Lewisham
+    - quote: They stepped in after discharge and stabilised things quickly.
+      role: Community Nurse
+      company: Integrated Care Team
+contactSection:
+  heading: Arrange a Reliable Home Care Package
+  intro: Tell us what support is needed and we will map a practical domiciliary plan around routine and safety.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB

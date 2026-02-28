@@ -1,79 +1,79 @@
 ---
 import SiteLayout from '@layouts/SiteLayout.astro';
-import { siteConfig } from '@/config/site';
+import { getEntry } from 'astro:content';
 import PageHero from '@components/PageHero.astro';
 import ServiceSpecialties from '@components/ServiceSpecialties.astro';
 import SupportedLivingFeatures from '@components/SupportedLivingFeatures.astro';
 import ContactSection from '@components/ContactSection.astro';
+import unsplashSupport from '@assets/images/unsplash-support.jpg';
+import unsplashCommunity from '@assets/images/unsplash-community.jpg';
+import unsplashTraining from '@assets/images/unsplash-training.jpg';
+import unsplashFamily from '@assets/images/unsplash-family.jpg';
 
-const metadata = {
-  title: `Learning Disability Support Services | ${siteConfig.name}`,
-  description: '[Describe your learning disability support services and who they support]',
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: 'Learning Disability Support Services',
-    description: '[Describe your learning disability support services and who they support]',
-    provider: {
-      '@type': 'Organization',
-      name: siteConfig.name
-    },
-    areaServed: '[Your Service Area]',
-    serviceType: 'Learning disability support'
-  }
+const ldEntry = await getEntry('cuteLearningDisabilitySupport', 'default');
+const ldDomEntry = await getEntry('cuteLearningDisabilitySupport', 'dom-care');
+if (!ldEntry) {
+  throw new Error('Missing content entry: cuteLearningDisabilitySupport/default');
+}
+if (!ldDomEntry) {
+  throw new Error('Missing content entry: cuteLearningDisabilitySupport/dom-care');
+}
+
+const profiles = [
+  { key: 'supported-living', content: ldEntry.data },
+  { key: 'dom-care', content: ldDomEntry.data },
+] as const;
+
+// Image mapping for pathways
+const imageMap: Record<string, ImageMetadata> = {
+  'unsplash-support': unsplashSupport,
+  'unsplash-community': unsplashCommunity,
+  'unsplash-training': unsplashTraining,
+  'unsplash-family': unsplashFamily,
 };
-
-const pathways = [
-  {
-    title: 'Community Skills & Independence',
-    description: 'Person-centred support that builds confidence with daily living, travel training, and community participation.',
-    icon: 'tabler:road-sign',
-    imageSrc: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80',
-    features: ['Daily living skills', 'Confidence building', 'Community participation']
-  },
-  {
-    title: 'Positive Behaviour Support',
-    description: 'Structured, evidence-informed PBS plans that improve wellbeing and reduce distress for individuals and families.',
-    icon: 'tabler:shield-check',
-    imageSrc: 'https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=800&q=80',
-    features: ['PBS planning', 'Wellbeing outcomes', 'Consistency across teams']
-  },
-  {
-    title: 'Transitions & Life Planning',
-    description: 'Support for key life transitions, including education, employment pathways, and moving toward independent living.',
-    icon: 'tabler:calendar-event',
-    imageSrc: 'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80',
-    features: ['Education pathways', 'Employment support', 'Independent living']
-  },
-  {
-    title: 'Family & Carer Partnership',
-    description: 'Collaborative planning, regular communication, and respite options that support families alongside individuals.',
-    icon: 'tabler:users',
-    imageSrc: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80',
-    features: ['Family collaboration', 'Respite support', 'Care planning']
-  }
-];
 ---
 
-<SiteLayout metadata={metadata}>
-  <PageHero
-    heading="Learning Disability Support Services"
-    subheading="[Describe your learning disability support offer and the outcomes you focus on]"
-    primaryCtaText="Enquire Today"
-    primaryCtaHref="/contact"
-    secondaryCtaText="Explore Support"
-    secondaryCtaHref="#specialties"
-    imageSrc="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=2000&q=80"
-    imageAlt="[Learning disability support services]"
-  />
+<SiteLayout metadata={ldEntry.data.metadata}>
+  <div data-care-profile-switcher>
+    {profiles.map(({ key, content }) => (
+      <div data-care-profile-panel={key} class:list={{ hidden: key !== 'supported-living' }}>
+        <PageHero
+          heading={content.hero.heading}
+          subheading={content.hero.subheading}
+          profileContent={content.hero.profileContent}
+          primaryCtaText={content.hero.primaryCtaText}
+          primaryCtaHref={content.hero.primaryCtaHref}
+          secondaryCtaText={content.hero.secondaryCtaText}
+          secondaryCtaHref={content.hero.secondaryCtaHref}
+          imageSrc={imageMap[content.hero.imageKey] || unsplashSupport}
+          imageAlt={content.hero.imageAlt}
+        />
 
-  <ServiceSpecialties
-    heading="Learning Disability Support Pathways"
-    subheading="Tailored pathways that build skills, confidence, and independence through consistent, specialist care."
-    specialties={pathways}
-  />
+        <ServiceSpecialties
+          heading={content.pathwaysSection.heading}
+          subheading={content.pathwaysSection.subheading}
+          specialties={content.pathways.map((pathway) => ({
+            ...pathway,
+            imageSrc: imageMap[pathway.imageKey] || unsplashSupport,
+          }))}
+        />
 
-  <SupportedLivingFeatures />
+        <SupportedLivingFeatures
+          heading={content.supportedLivingFeatures.heading}
+          subheading={content.supportedLivingFeatures.subheading}
+          features={content.supportedLivingFeatures.features}
+        />
 
-  <ContactSection />
+        <ContactSection
+          heading={content.contactSection.heading}
+          intro={content.contactSection.intro}
+          phoneLabel={content.contactSection.phoneLabel}
+          phoneHref={content.contactSection.phoneHref}
+          emailLabel={content.contactSection.emailLabel}
+          emailHref={content.contactSection.emailHref}
+          address={content.contactSection.address}
+        />
+      </div>
+    ))}
+  </div>
 </SiteLayout>

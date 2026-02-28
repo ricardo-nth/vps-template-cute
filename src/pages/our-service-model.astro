@@ -1,40 +1,69 @@
 ---
 import SiteLayout from '@layouts/SiteLayout.astro';
+import { getEntry } from 'astro:content';
 import PageHero from '@components/PageHero.astro';
 import WhyChooseUs from '@components/WhyChooseUs.astro';
 import ClientJourney from '@components/ClientJourney.astro';
 import ContactSection from '@components/ContactSection.astro';
+import unsplashApproach from '@assets/images/unsplash-approach.jpg';
 
-const metadata = {
-  title: 'Our Approach | [Business Name]',
-  description: '[Describe your unique approach and methodology]',
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'Our Approach',
-    description: '[Your approach to delivering quality services]'
-  }
+const modelEntry = await getEntry('cuteServiceModel', 'default');
+const modelDomEntry = await getEntry('cuteServiceModel', 'dom-care');
+if (!modelEntry) {
+  throw new Error('Missing content entry: cuteServiceModel/default');
+}
+if (!modelDomEntry) {
+  throw new Error('Missing content entry: cuteServiceModel/dom-care');
+}
+
+const profiles = [
+  { key: 'supported-living', content: modelEntry.data },
+  { key: 'dom-care', content: modelDomEntry.data },
+] as const;
+
+// Image mapping
+const imageMap: Record<string, ImageMetadata> = {
+  'unsplash-approach': unsplashApproach,
 };
 ---
 
-<SiteLayout metadata={metadata}>
-  <PageHero
-    heading="[Your Approach Headline]"
-    subheading="[Describe what makes your approach unique and how it benefits your clients]"
-    primaryCtaText="Contact Us"
-    primaryCtaHref="/contact"
-    secondaryCtaText="Our Values"
-    secondaryCtaHref="#values"
-    imageSrc="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-    imageAlt="[Your approach image description]"
-  />
+<SiteLayout metadata={modelEntry.data.metadata}>
+  <div data-care-profile-switcher>
+    {profiles.map(({ key, content }) => (
+      <div data-care-profile-panel={key} class:list={{ hidden: key !== 'supported-living' }}>
+        <PageHero
+          heading={content.hero.heading}
+          subheading={content.hero.subheading}
+          primaryCtaText={content.hero.primaryCtaText}
+          primaryCtaHref={content.hero.primaryCtaHref}
+          secondaryCtaText={content.hero.secondaryCtaText}
+          secondaryCtaHref={content.hero.secondaryCtaHref}
+          imageSrc={imageMap[content.hero.imageKey] || unsplashApproach}
+          imageAlt={content.hero.imageAlt}
+        />
 
-  <WhyChooseUs
-    heading="Why Clients Choose Us"
-    id="values"
-  />
+        <WhyChooseUs
+          heading={content.whyChooseUs.heading}
+          points={content.whyChooseUs.points}
+          id="values"
+        />
 
-  <ClientJourney />
+        <ClientJourney
+          heading={content.clientJourney.heading}
+          subheading={content.clientJourney.subheading}
+          steps={content.clientJourney.steps}
+        />
 
-  <ContactSection />
+        <ContactSection
+          heading={content.contactSection.heading}
+          intro={content.contactSection.intro}
+          phoneLabel={content.contactSection.phoneLabel}
+          phoneHref={content.contactSection.phoneHref}
+          emailLabel={content.contactSection.emailLabel}
+          emailHref={content.contactSection.emailHref}
+          address={content.contactSection.address}
+        />
+      </div>
+    ))}
+  </div>
 </SiteLayout>

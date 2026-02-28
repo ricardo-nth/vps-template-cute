@@ -1,0 +1,81 @@
+metadata:
+  title: Domiciliary Care Services - Harbor Home Care
+  description: Responsive domiciliary care services with reliable home visits, continuity of carers, and regular outcome reviews.
+  schema:
+    '@context': https://schema.org
+    '@type': Service
+    name: Domiciliary Care Services
+    description: Responsive domiciliary care with reliable home visits
+hero:
+  heading: Domiciliary Care Services
+  subheading: Reliable home support that keeps routines stable, wellbeing protected, and families informed.
+  profileContent:
+    supported-living:
+      heading: Supported Living Services
+      subheading: Structured tenancy support that helps adults grow confidence, maintain stability, and progress toward greater independence.
+    dom-care:
+      heading: Domiciliary Care Services
+      subheading: Reliable home support that keeps routines stable, wellbeing protected, and families informed.
+  primaryCtaText: Speak With Our Team
+  primaryCtaHref: /contact
+  secondaryCtaText: Explore Support
+  secondaryCtaHref: '#specialties'
+  imageKey: unsplash-support
+  imageAlt: Domiciliary care professional supporting a client at home
+pathwaysSection:
+  heading: Domiciliary Care Service Lines
+  subheading: Practical home-care pathways focused on routine reliability, safety, and wellbeing.
+pathways:
+  - title: Personal Care Visits
+    description: Respectful support with washing, dressing, mobility, and dignity-led morning or evening routines.
+    icon: tabler:heart
+    imageKey: unsplash-community
+    features:
+      - Personal care
+      - Mobility support
+      - Dignity-led routines
+  - title: Medication Support
+    description: Prompting and administration support with clear records and escalation when health needs shift.
+    icon: tabler:pill
+    imageKey: unsplash-support
+    features:
+      - Medication prompts
+      - Administration support
+      - Clear records
+  - title: Meal and Nutrition Support
+    description: Planned help with meal preparation, hydration, and nutritional consistency at home.
+    icon: tabler:tools-kitchen-2
+    imageKey: unsplash-training
+    features:
+      - Meal preparation
+      - Hydration support
+      - Nutritional planning
+  - title: Wellbeing and Companionship
+    description: Structured social support that reduces isolation and improves emotional wellbeing.
+    icon: tabler:users
+    imageKey: unsplash-family
+    features:
+      - Social support
+      - Emotional wellbeing
+      - Companionship visits
+supportedLivingFeatures:
+  heading: Domiciliary Quality Markers
+  subheading: Delivery standards that keep home-care support safe, consistent, and family-informed.
+  features:
+    - icon: tabler:calendar-check
+      title: Reliability and Continuity
+      description: Stable scheduling and continuity-led rostering reduce disruption.
+    - icon: tabler:shield-check
+      title: Safe Delivery
+      description: Medication support, safeguarding workflows, and escalation routes are clearly documented.
+    - icon: tabler:message-circle
+      title: Family Communication
+      description: Relatives and professionals receive practical updates and responsive follow-up.
+contactSection:
+  heading: Arrange Domiciliary Support
+  intro: Tell us what support is needed and we will shape a home-care package around routine stability and reassurance.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB

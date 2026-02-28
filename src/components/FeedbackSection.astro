@@ -4,11 +4,41 @@ import Icon from './Icon.astro';
 interface Props {
   heading?: string;
   intro?: string;
+  compliment?: {
+    title: string;
+    description: string;
+    actionText: string;
+    actionHref: string;
+  };
+  complaint?: {
+    title: string;
+    description: string;
+    actionText: string;
+    actionHref: string;
+  };
+  cqcNote?: string;
+  cqcLinkText?: string;
+  cqcLinkHref?: string;
 }
 
 const {
   heading = "Compliments & Complaints",
-  intro = "We are committed to providing the highest quality of care. Your feedback helps us improve and ensures we maintain our high standards. We take all feedback seriously and have a transparent process for handling both compliments and complaints."
+  intro = "We are committed to providing the highest quality of care. Your feedback helps us improve and ensures we maintain our high standards. We take all feedback seriously and have a transparent process for handling both compliments and complaints.",
+  compliment = {
+    title: 'Leave a Compliment',
+    description: "Has a member of our team gone above and beyond? We'd love to hear about it so we can recognise their dedication.",
+    actionText: 'Send Compliment',
+    actionHref: 'mailto:feedback@healthcare.com?subject=Compliment',
+  },
+  complaint = {
+    title: 'Raise a Concern',
+    description: "If you're not happy with any aspect of our service, please let us know. We have a formal complaints procedure to ensure fair resolution.",
+    actionText: 'File Complaint',
+    actionHref: 'mailto:feedback@healthcare.com?subject=Complaint',
+  },
+  cqcNote = 'You can also contact the Care Quality Commission (CQC) directly if you have concerns about your care.',
+  cqcLinkText = 'Visit CQC Website',
+  cqcLinkHref = 'https://www.cqc.org.uk/contact-us',
 } = Astro.props as Props;
 ---
 
@@ -30,13 +60,13 @@ const {
           <div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
             <Icon name="tabler:thumb-up" class="w-5 h-5" />
           </div>
-          <h3 class="text-xl font-bold text-foreground">Leave a Compliment</h3>
+          <h3 class="text-xl font-bold text-foreground">{compliment.title}</h3>
         </div>
         <p class="text-muted-foreground mb-6">
-          Has a member of our team gone above and beyond? We'd love to hear about it so we can recognise their dedication.
+          {compliment.description}
         </p>
-        <a href="mailto:feedback@healthcare.com?subject=Compliment" class="text-teal font-semibold hover:underline inline-flex items-center gap-2">
-          Send Compliment
+        <a href={compliment.actionHref} class="text-teal font-semibold hover:underline inline-flex items-center gap-2">
+          {compliment.actionText}
           <Icon name="tabler:arrow-right" class="w-4 h-4" />
         </a>
       </div>
@@ -47,13 +77,13 @@ const {
           <div class="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
             <Icon name="tabler:alert-circle" class="w-5 h-5" />
           </div>
-          <h3 class="text-xl font-bold text-foreground">Raise a Concern</h3>
+          <h3 class="text-xl font-bold text-foreground">{complaint.title}</h3>
         </div>
         <p class="text-muted-foreground mb-6">
-          If you're not happy with any aspect of our service, please let us know. We have a formal complaints procedure to ensure fair resolution.
+          {complaint.description}
         </p>
-        <a href="mailto:feedback@healthcare.com?subject=Complaint" class="text-teal font-semibold hover:underline inline-flex items-center gap-2">
-          File Complaint
+        <a href={complaint.actionHref} class="text-teal font-semibold hover:underline inline-flex items-center gap-2">
+          {complaint.actionText}
           <Icon name="tabler:arrow-right" class="w-4 h-4" />
         </a>
       </div>
@@ -61,8 +91,8 @@ const {
 
     <div class="mt-12 p-6 bg-background rounded-xl border border-border inline-block">
       <p class="text-sm text-muted-foreground">
-        You can also contact the Care Quality Commission (CQC) directly if you have concerns about your care.
-        <a href="https://www.cqc.org.uk/contact-us" target="_blank" rel="noopener noreferrer" class="text-teal hover:underline ml-1">Visit CQC Website</a>
+        {cqcNote}
+        <a href={cqcLinkHref} target="_blank" rel="noopener noreferrer" class="text-teal hover:underline ml-1">{cqcLinkText}</a>
       </p>
     </div>
   </div>

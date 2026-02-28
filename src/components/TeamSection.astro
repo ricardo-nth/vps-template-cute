@@ -8,7 +8,7 @@ interface TeamMember {
   name: string;
   role: string;
   description: string;
-  image: any;
+  image: ImageMetadata;
   imageAlt?: string;
   credentials?: string;
 }
@@ -74,6 +74,7 @@ const {
               src={member.image}
               alt={member.imageAlt || member.name}
               class="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
+              loading="lazy"
             />
             <!-- Primary Overlay (Replaces Grayscale) -->
             <div class="absolute inset-0 bg-primary/40 mix-blend-color opacity-100 group-hover:opacity-0 transition-opacity duration-700"></div>

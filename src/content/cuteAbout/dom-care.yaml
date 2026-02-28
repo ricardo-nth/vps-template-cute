@@ -1,0 +1,56 @@
+metadata:
+  title: About Harbor Home Care
+  description: Meet Harbor Home Care's domiciliary leadership team and learn how we deliver reliable home visits with continuity, safeguarding, and clear communication.
+  schema:
+    '@context': https://schema.org
+    '@type': AboutPage
+    name: About Harbor Home Care
+    description: Meet Harbor Home Care's domiciliary leadership team and learn how we deliver reliable home visits with continuity, safeguarding, and clear communication.
+hero:
+  heading: Home Care Built on Consistency and Trust
+  subheading: Our domiciliary team combines compassionate support with robust systems so families can rely on safe, predictable care.
+  primaryCtaText: Contact Our Team
+  primaryCtaHref: /contact
+  secondaryCtaText: Read Our Story
+  secondaryCtaHref: '#story'
+  imageKey: unsplash-approach
+  imageAlt: Domiciliary care managers discussing service delivery standards
+stats:
+  - value: 420+
+    label: Weekly Home Visits
+  - value: 97%
+    label: On-Time Visit Performance
+  - value: 95%
+    label: Primary Carer Continuity
+  - value: 96%
+    label: Family Satisfaction
+originStory:
+  eyebrow: Our Origins
+  heading: Our Journey
+  text: Harbor Home Care was created to provide home support that feels both professional and genuinely personal. We invested early in continuity-led rostering, structured communication, and safeguarding oversight to improve reliability. Today our domiciliary teams deliver practical support that protects routine, wellbeing, and independent living.
+  imageKey: about-team
+missionStory:
+  eyebrow: Our Mission
+  heading: Building dependable home-care delivery for adults and families
+  text: We combine robust oversight with practical day-to-day support in familiar home settings. Families receive clear communication, predictable scheduling, and responsive escalation when needs change.
+  imageKey: residential-care
+values:
+  - title: Respectful Daily Support
+    description: We deliver personal care with dignity, empathy, and attention to individual preference.
+    icon: heart
+  - title: Reliability You Can Plan Around
+    description: Stable scheduling and contingency planning improve trust and reduce disruption.
+    icon: calendar-check
+  - title: Safe and Accountable Practice
+    description: Safeguarding and governance standards are embedded in every package.
+    icon: shield-check
+  - title: Family Communication
+    description: Relatives and professionals receive clear updates and responsive support.
+    icon: message-circle
+team:
+  eyebrow: Our Experts
+  heading: Meet Our Home Care Leadership
+  intro: Experienced professionals focused on safe visits, continuity of carers, and operational consistency.
+cta:
+  heading: Need a Reliable Home Care Partner?
+  description: Talk to our team about your current support requirements and how we can improve continuity at home.

@@ -1,0 +1,81 @@
+metadata:
+  title: Supported Living Services - Harbor Care Services
+  description: Outcome-led supported living services that help adults sustain tenancies, build life skills, and increase independence safely.
+  schema:
+    '@context': https://schema.org
+    '@type': Service
+    name: Supported Living Services
+    description: Outcome-led supported living with person-centred planning
+hero:
+  heading: Supported Living Services
+  subheading: Structured tenancy support that helps adults grow confidence, maintain stability, and progress toward greater independence.
+  profileContent:
+    supported-living:
+      heading: Supported Living Services
+      subheading: Structured tenancy support that helps adults grow confidence, maintain stability, and progress toward greater independence.
+    dom-care:
+      heading: Domiciliary Care Services
+      subheading: Reliable home visits that support daily routines, wellbeing, and safer independent living in familiar surroundings.
+  primaryCtaText: Speak With Our Team
+  primaryCtaHref: /contact
+  secondaryCtaText: Explore Support
+  secondaryCtaHref: '#specialties'
+  imageKey: unsplash-support
+  imageAlt: Support worker and resident reviewing supported living goals
+pathwaysSection:
+  heading: Learning Disability Support Pathways
+  subheading: Tailored pathways that build skills, confidence, and independence through consistent, specialist care.
+pathways:
+  - title: Tenancy and Daily Living Support
+    description: Core tenancy support covering routines, risk planning, and independent living milestones.
+    icon: tabler:home-2
+    imageKey: unsplash-community
+    features:
+      - Routine establishment
+      - Risk planning
+      - Independent living goals
+  - title: Life Skills Development
+    description: Structured coaching for cooking, budgeting, household tasks, and safe daily decision-making.
+    icon: tabler:bulb
+    imageKey: unsplash-support
+    features:
+      - Cooking skills
+      - Budgeting support
+      - Household management
+  - title: Community Access
+    description: Support for appointments, shopping, and social routines that build confidence.
+    icon: tabler:road-sign
+    imageKey: unsplash-training
+    features:
+      - Appointment support
+      - Community participation
+      - Social confidence
+  - title: Complex Needs Support
+    description: Joined-up support for learning disability, autism, and mental health needs.
+    icon: tabler:shield-check
+    imageKey: unsplash-family
+    features:
+      - Learning disability
+      - Autism support
+      - Mental health pathways
+supportedLivingFeatures:
+  heading: Supported Living Quality Markers
+  subheading: Delivery standards that keep placements stable, person-centred, and outcome-led.
+  features:
+    - icon: tabler:user-check
+      title: Co-Produced Plans
+      description: Goals are set with service users and reviewed with families and professionals.
+    - icon: tabler:shield-check
+      title: Positive Risk Management
+      description: Support teams balance safety with confidence-building and autonomy.
+    - icon: tabler:home-heart
+      title: Tenancy Sustainment Focus
+      description: Practical routines and engagement reduce placement breakdown risk.
+contactSection:
+  heading: Discuss a Supported Living Referral
+  intro: Share your requirements and we will map a practical pathway with clear outcomes and governance.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB

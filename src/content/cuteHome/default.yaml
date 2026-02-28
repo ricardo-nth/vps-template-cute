@@ -1,0 +1,82 @@
+metadata:
+  title: Harbor Care Services
+  description: Outcome-led supported living and dependable domiciliary care delivered with clear governance, continuity, and person-centred planning.
+  schema:
+    '@context': https://schema.org
+    '@type': WebPage
+    name: Harbor Care Services
+    description: Outcome-led supported living and dependable domiciliary care delivered with clear governance, continuity, and person-centred planning.
+hero:
+  profileContent:
+    supported-living:
+      heading: Supported Living With Clear Independence Outcomes
+      subheading: Structured tenancy support that helps adults build life skills, sustain placements, and participate confidently in their communities.
+    dom-care:
+      heading: Domiciliary Care That Families Can Rely On
+      subheading: Reliable home visits with continuity of carers, safe routines, and communication that keeps everyone informed.
+  description: We support adults, families, and commissioners with structured planning, dependable teams, and outcomes that are visible in everyday life.
+  ctaText: Explore Services
+  ctaHref: /services
+  imageKey: hero
+  imageAlt: Care coordinator reviewing a person-centred plan with a client
+  socialProofText: Trusted by families, commissioners, and referral teams
+  rating: '4.9'
+servicesOverview:
+  eyebrow: Services
+  heading: Supported Living Service Lines
+  intro: Our supported living pathways are built around tenancy stability, life-skills development, and measurable independence outcomes.
+  services:
+    - title: Tenancy and Daily Living Support
+      description: Core tenancy support covering routines, risk planning, and independent living milestones.
+      href: /services/learning-disability-support
+      ctaText: Learn more
+      icon: seedling
+    - title: Life Skills Development
+      description: Structured coaching for cooking, budgeting, household tasks, and safe daily decision-making.
+      href: /services/learning-disability-support
+      ctaText: Learn more
+      icon: tree
+    - title: Community Access
+      description: Support for appointments, shopping, and social routines that build confidence.
+      href: /services/learning-disability-support
+      ctaText: Learn more
+      icon: lotus
+aboutUs:
+  eyebrow: About Harbor Care
+  heading: Strong Governance, Human Delivery
+  description: Harbor Care Services combines robust oversight with practical frontline delivery so adults can progress safely and consistently.
+  ctaText: Explore Our Story
+  ctaHref: /about
+  imageKey: care-facility
+  imageAlt: Harbor Care professionals in a service planning meeting
+whyChooseUs:
+  heading: Designed for Dependability Across Every Package
+  points:
+    - title: CQC-Aligned Governance
+      description: Policies, supervision, and audits keep care safe and inspection-ready.
+    - title: Continuity of Team
+      description: Stable staffing and careful matching improve trust and routine stability.
+    - title: Review-Led Outcomes
+      description: Clear goals and regular reviews keep support practical and measurable.
+testimonials:
+  eyebrow: Testimonials
+  heading: What Families and Partners Say
+  intro: Feedback from people and teams we support every day.
+  items:
+    - quote: Harbor Care gave us a structure we could trust and outcomes we could track.
+      role: Family Representative
+      company: South London
+    - quote: Communication is clear and proactive, even when needs change quickly.
+      role: Social Worker
+      company: Local Authority Partner
+    - quote: Their team combines compassion with operational discipline.
+      role: Commissioning Lead
+      company: Adult Services
+contactSection:
+  heading: Plan the Right Care Package
+  intro: Share your referral goals and we will shape a practical support model with clear outcomes and dependable delivery.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB

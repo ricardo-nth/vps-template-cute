@@ -1,0 +1,56 @@
+metadata:
+  title: About Harbor Care Services
+  description: Learn how Harbor Care Services delivers supported living and domiciliary care through strong governance, continuity of teams, and person-centred outcomes.
+  schema:
+    '@context': https://schema.org
+    '@type': AboutPage
+    name: About Harbor Care Services
+    description: Learn how Harbor Care Services delivers supported living and domiciliary care through strong governance, continuity of teams, and person-centred outcomes.
+hero:
+  heading: Built on Accountability, Compassion, and Progress
+  subheading: Harbor Care combines operational discipline with person-centred delivery so adults can live more safely and independently.
+  primaryCtaText: Contact Our Team
+  primaryCtaHref: /contact
+  secondaryCtaText: Read Our Story
+  secondaryCtaHref: '#story'
+  imageKey: unsplash-approach
+  imageAlt: Harbor Care leadership team discussing service quality
+stats:
+  - value: 560+
+    label: Active Care Packages
+  - value: 140+
+    label: Supported Living Placements
+  - value: 420+
+    label: Weekly Domiciliary Visits
+  - value: 96%
+    label: Family and Commissioner Satisfaction
+originStory:
+  eyebrow: Our Origins
+  heading: Our Journey
+  text: Harbor Care Services started with a clear goal to deliver support that is compassionate in practice and robust in governance. As demand grew, we invested in specialist training, stronger supervision, and outcome-led review frameworks to improve consistency. Today we support adults across supported living and domiciliary pathways with clear plans, stable teams, and measurable progress.
+  imageKey: about-team
+missionStory:
+  eyebrow: Our Mission
+  heading: Building services that are both person-centred and inspection-ready
+  text: We combine robust oversight with practical frontline delivery so adults can progress safely and consistently. Families and professionals receive straightforward updates, evidence-based reviews, and reliable escalation pathways.
+  imageKey: residential-care
+values:
+  - title: Dignity in Every Interaction
+    description: We deliver respectful, person-centred support that protects choice and autonomy.
+    icon: heart
+  - title: Reliability Through Systems
+    description: Governance, supervision, and auditing keep quality consistent from policy to frontline practice.
+    icon: shield-check
+  - title: Outcome-Focused Delivery
+    description: Care plans are linked to practical goals and reviewed regularly with stakeholders.
+    icon: target-arrow
+  - title: Partnership and Transparency
+    description: Families, professionals, and teams stay aligned through clear and timely communication.
+    icon: users-group
+team:
+  eyebrow: Our Experts
+  heading: Meet Our Leadership
+  intro: Experienced leaders focused on safe delivery, team development, and measurable outcomes.
+cta:
+  heading: Looking for a Dependable Care Partner?
+  description: Speak with our team about your current referral requirements and the outcomes you need to achieve.

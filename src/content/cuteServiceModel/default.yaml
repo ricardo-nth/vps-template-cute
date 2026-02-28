@@ -1,0 +1,49 @@
+metadata:
+  title: Our Service Model - Harbor Care Services
+  description: See how Harbor Care delivers supported living and domiciliary pathways through structured planning, governance discipline, and review-led outcomes.
+  schema:
+    '@context': https://schema.org
+    '@type': WebPage
+    name: Our Service Model
+hero:
+  heading: A Service Model Built for Consistency
+  subheading: We combine person-centred planning, operational discipline, and transparent communication so support remains safe and dependable over time.
+  primaryCtaText: Contact Us
+  primaryCtaHref: /contact
+  secondaryCtaText: Our Principles
+  secondaryCtaHref: '#values'
+  imageKey: unsplash-approach
+  imageAlt: Harbor Care managers reviewing service delivery process
+whyChooseUs:
+  heading: Why Our Delivery Model Works
+  points:
+    - title: Person-Centred Planning
+      description: Every package is co-produced around individual goals, strengths, and risk context.
+    - title: Structured Governance
+      description: Supervision, audits, and escalation pathways keep quality consistent across teams.
+    - title: Collaborative Communication
+      description: Families, professionals, and frontline staff stay aligned through clear review cycles.
+clientJourney:
+  heading: Our Delivery Journey
+  subheading: From referral to long-term review, each stage is designed for clarity, safety, and measurable progress.
+  steps:
+    - title: Referral and Discovery
+      description: We collect referral context, risks, and desired outcomes with professionals and families.
+      icon: tabler:clipboard-search
+    - title: Assessment and Planning
+      description: We build outcome-led plans with practical milestones, safeguarding controls, and review points.
+      icon: tabler:file-text
+    - title: Team Matching and Launch
+      description: We allocate trained staff for compatibility, consistency, and safe service mobilisation.
+      icon: tabler:users
+    - title: Review and Improvement
+      description: We track progress and adjust support as needs evolve, with transparent stakeholder updates.
+      icon: tabler:refresh
+contactSection:
+  heading: Discuss Your Service Requirements
+  intro: Share your care priorities and we will map a practical model aligned to outcomes, continuity, and compliance.
+  phoneLabel: 0208 555 0199
+  phoneHref: tel:+442085550199
+  emailLabel: referrals@harborcare.co.uk
+  emailHref: mailto:referrals@harborcare.co.uk
+  address: Unit 12, Healthcare Business Park, London, SE1 7PB
