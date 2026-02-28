@@ -22,6 +22,49 @@ hero:
   secondaryCtaHref: '#specialties'
   imageKey: unsplash-support
   imageAlt: Domiciliary care professional supporting a client at home
+outcomesSnapshot:
+  heading: Domiciliary Care Outcomes Snapshot
+  intro: Service indicators focused on reliability, continuity, and home-based safety.
+  stats:
+    - value: 97%
+      label: On-Time Visits
+      detail: Visits delivered within planned time windows.
+    - value: 95%
+      label: Primary Carer Continuity
+      detail: Familiar carers supporting most scheduled visits.
+    - value: 96%
+      label: Family Satisfaction
+      detail: Positive confidence in communication and care quality.
+serviceFit:
+  badgeLabel: Service Fit
+  heading: Who This Domiciliary Pathway Is Best For
+  intro: Best for adults who need dependable support at home with clear routines and responsive family communication.
+  suitableForTitle: Usually a Strong Fit For
+  suitableFor:
+    - Adults needing personal care, medication prompts, or mobility assistance at home.
+    - Families wanting reliable schedules and clear communication updates.
+    - Post-discharge referrals needing structured routine rebuilding support.
+  alternativeSupportTitle: Better Directed Elsewhere When
+  alternativeSupport:
+    - Tenancy-based supported living is required as the primary model.
+    - Residential or inpatient care is clinically required.
+    - The referral has no ongoing home-visit support requirement.
+firstThirtyDays:
+  heading: What the First 30 Days Looks Like
+  intro: We establish safety and consistency quickly, then optimise delivery around daily reality.
+  milestones:
+    - dayRange: Days 1-7
+      title: Home Assessment and Risk Setup
+      description: Confirm routine needs, medication workflows, and escalation protocols.
+      icon: tabler:home-check
+    - dayRange: Days 8-14
+      title: Carer Matching and Schedule Stabilisation
+      description: Align visit windows and continuity-focused staffing with family and client preferences.
+      icon: tabler:calendar-check
+    - dayRange: Days 15-30
+      title: Review and Service Optimisation
+      description: Evaluate delivery quality and outcomes, then refine the care package for month two.
+      icon: tabler:chart-bar
 pathwaysSection:
   heading: Domiciliary Care Service Lines
   subheading: Practical home-care pathways focused on routine reliability, safety, and wellbeing.
@@ -71,6 +114,18 @@ supportedLivingFeatures:
     - icon: tabler:message-circle
       title: Family Communication
       description: Relatives and professionals receive practical updates and responsive follow-up.
+faqSection:
+  heading: Domiciliary Care Referral FAQs
+  intro: Practical answers for families, hospital teams, and referral coordinators.
+  items:
+    - question: How fast can domiciliary care start?
+      answer: Urgent referrals are triaged quickly, with clear mobilisation steps based on complexity and risk profile.
+    - question: How do you maintain continuity of carers?
+      answer: We plan continuity-led rosters with backup cover, reducing disruption while keeping care safe and reliable.
+    - question: Can visit times or frequency be adjusted?
+      answer: Yes. Packages are reviewed regularly and can be updated as routines, risks, or family circumstances change.
+    - question: How are issues escalated out of hours?
+      answer: Active packages have urgent escalation pathways and responsive support coordination beyond core office hours.
 contactSection:
   heading: Arrange Domiciliary Support
   intro: Tell us what support is needed and we will shape a home-care package around routine stability and reassurance.

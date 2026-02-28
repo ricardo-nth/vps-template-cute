@@ -22,17 +22,17 @@ servicesOverview:
   services:
     - title: Personal Care Visits
       description: Respectful support with washing, dressing, hygiene, and dignity-led routines.
-      href: /contact
+      href: /services/learning-disability-support
       ctaText: Learn more
       icon: seedling
     - title: Medication Support
       description: Prompting and administration support with documented records and escalation pathways.
-      href: /contact
+      href: /services/learning-disability-support
       ctaText: Learn more
       icon: tree
     - title: Meal and Wellbeing Support
       description: Help with nutrition, hydration, companionship, and daily routine consistency.
-      href: /contact
+      href: /services/learning-disability-support
       ctaText: Learn more
       icon: lotus
 supportedLivingFeatures:

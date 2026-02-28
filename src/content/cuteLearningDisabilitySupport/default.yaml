@@ -22,6 +22,49 @@ hero:
   secondaryCtaHref: '#specialties'
   imageKey: unsplash-support
   imageAlt: Support worker and resident reviewing supported living goals
+outcomesSnapshot:
+  heading: Supported Living Outcomes Snapshot
+  intro: Key indicators that matter for referral confidence and long-term placement stability.
+  stats:
+    - value: 92%
+      label: Tenancy Sustainment
+      detail: Placements remaining stable at 12 months.
+    - value: 96%
+      label: Family Satisfaction
+      detail: Positive feedback on communication, continuity, and outcomes.
+    - value: 100%
+      label: Mandatory Training Compliance
+      detail: Frontline staff up to date on required competencies.
+serviceFit:
+  badgeLabel: Service Fit
+  heading: Who This Supported Living Pathway Is Best For
+  intro: Best suited where adults need structured tenancy support with measurable progression and responsive risk management.
+  suitableForTitle: Usually a Strong Fit For
+  suitableFor:
+    - Adults with learning disabilities needing daily structure to sustain tenancies.
+    - Referrals requiring clear life-skills milestones and regular review cycles.
+    - Families and commissioners prioritising stable, outcome-led support.
+  alternativeSupportTitle: Better Directed Elsewhere When
+  alternativeSupport:
+    - The primary need is short-term clinical intervention without tenancy goals.
+    - Support required is limited to brief non-structured visits.
+    - No ongoing review framework or measurable outcome tracking is required.
+firstThirtyDays:
+  heading: What the First 30 Days Looks Like
+  intro: Mobilisation focuses on safe onboarding, routine stabilisation, and visible early progress.
+  milestones:
+    - dayRange: Days 1-7
+      title: Referral Confirmation and Risk Baseline
+      description: Confirm needs, immediate safeguards, and communication responsibilities with all stakeholders.
+      icon: tabler:clipboard-check
+    - dayRange: Days 8-14
+      title: Plan Activation and Team Matching
+      description: Start co-produced routines and assign consistent staff for continuity and trust.
+      icon: tabler:users-group
+    - dayRange: Days 15-30
+      title: First Outcome Review
+      description: Check early progress, resolve friction points, and adjust goals for month two.
+      icon: tabler:chart-line
 pathwaysSection:
   heading: Learning Disability Support Pathways
   subheading: Tailored pathways that build skills, confidence, and independence through consistent, specialist care.
@@ -71,6 +114,18 @@ supportedLivingFeatures:
     - icon: tabler:home-heart
       title: Tenancy Sustainment Focus
       description: Practical routines and engagement reduce placement breakdown risk.
+faqSection:
+  heading: Supported Living Referral FAQs
+  intro: Practical answers for families, social workers, and referral coordinators.
+  items:
+    - question: How quickly can supported living packages begin?
+      answer: Start timing depends on complexity and risk, but urgent referrals are prioritised with clear mobilisation milestones.
+    - question: How are outcomes reported to stakeholders?
+      answer: We run structured review cycles with documented progress against agreed goals and transparent action tracking.
+    - question: Can support levels change over time?
+      answer: Yes. Support intensity and routines can be adjusted as needs, risks, and goals evolve.
+    - question: Do you support transitions from residential care?
+      answer: Yes, including tenancy-readiness work, routine stabilisation, and coordinated family/professional liaison.
 contactSection:
   heading: Discuss a Supported Living Referral
   intro: Share your requirements and we will map a practical pathway with clear outcomes and governance.

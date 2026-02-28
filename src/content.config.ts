@@ -66,6 +66,52 @@ const feedbackCardSchema = z.object({
   actionHref: z.string(),
 });
 
+const serviceFitSchema = z.object({
+  badgeLabel: z.string(),
+  heading: z.string(),
+  intro: z.string(),
+  suitableForTitle: z.string(),
+  suitableFor: z.array(z.string()),
+  alternativeSupportTitle: z.string(),
+  alternativeSupport: z.array(z.string()),
+});
+
+const outcomesSnapshotSchema = z.object({
+  heading: z.string(),
+  intro: z.string(),
+  stats: z.array(
+    z.object({
+      value: z.string(),
+      label: z.string(),
+      detail: z.string(),
+    })
+  ),
+});
+
+const firstThirtyDaysSchema = z.object({
+  heading: z.string(),
+  intro: z.string(),
+  milestones: z.array(
+    z.object({
+      dayRange: z.string(),
+      title: z.string(),
+      description: z.string(),
+      icon: z.string(),
+    })
+  ),
+});
+
+const faqSectionSchema = z.object({
+  heading: z.string(),
+  intro: z.string(),
+  items: z.array(
+    z.object({
+      question: z.string(),
+      answer: z.string(),
+    })
+  ),
+});
+
 const cuteGlobal = defineCollection({
   type: 'data',
   schema: z.object({
@@ -244,6 +290,9 @@ const cuteLearningDisabilitySupport = defineCollection({
       imageKey: z.string(),
       imageAlt: z.string(),
     }),
+    outcomesSnapshot: outcomesSnapshotSchema,
+    serviceFit: serviceFitSchema,
+    firstThirtyDays: firstThirtyDaysSchema,
     pathwaysSection: z.object({
       heading: z.string(),
       subheading: z.string(),
@@ -262,6 +311,7 @@ const cuteLearningDisabilitySupport = defineCollection({
       subheading: z.string(),
       features: z.array(featureSchema),
     }),
+    faqSection: faqSectionSchema,
     contactSection: contactSectionSchema,
   }),
 });
