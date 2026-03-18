@@ -58,13 +58,14 @@ const imageMap: Record<string, ImageMetadata> = {
 
         {/* Our Story Section */}
         <section id="story">
+          <div class="max-w-7xl mx-auto">
           {/* Origin Story Block */}
           <div class="grid lg:grid-cols-2">
             <div class="flex items-center order-2 lg:order-1 bg-background p-12 lg:p-24">
               <div>
                 <Eyebrow text={content.originStory.eyebrow} />
                 <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6">{content.originStory.heading}</h2>
-                <p class="text-lg text-muted-foreground leading-relaxed">
+                <p class="text-lg 2xl:text-xl text-muted-foreground leading-relaxed">
                   {content.originStory.text}
                 </p>
               </div>
@@ -73,7 +74,7 @@ const imageMap: Record<string, ImageMetadata> = {
               <Image
                 src={imageMap[content.originStory.imageKey] || aboutTeam}
                 alt="Office environment"
-                class="absolute inset-0 w-full h-full object-cover"
+                class="absolute inset-0 w-full h-full object-cover object-top"
               />
             </div>
           </div>
@@ -84,18 +85,19 @@ const imageMap: Record<string, ImageMetadata> = {
               <Image
                 src={imageMap[content.missionStory.imageKey] || residentialCare}
                 alt="Care team collaboration"
-                class="absolute inset-0 w-full h-full object-cover"
+                class="absolute inset-0 w-full h-full object-cover object-top"
               />
             </div>
             <div class="flex items-center bg-muted/30 p-12 lg:p-24">
               <div>
                 <Eyebrow text={content.missionStory.eyebrow} />
                 <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6">{content.missionStory.heading}</h2>
-                <p class="text-lg text-muted-foreground leading-relaxed">
+                <p class="text-lg 2xl:text-xl text-muted-foreground leading-relaxed">
                   {content.missionStory.text}
                 </p>
               </div>
             </div>
+          </div>
           </div>
         </section>
 
@@ -105,7 +107,7 @@ const imageMap: Record<string, ImageMetadata> = {
             <div class="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center">
               <Eyebrow text="Our Values" align="center" />
               <h2 class="text-3xl sm:text-4xl font-bold text-foreground mb-6">Our Core Values</h2>
-              <p class="text-lg text-muted-foreground">
+              <p class="text-lg 2xl:text-xl text-muted-foreground">
                 These principles guide every interaction, every care plan, and every decision we make. They are the foundation of our service.
               </p>
             </div>
@@ -117,7 +119,7 @@ const imageMap: Record<string, ImageMetadata> = {
                     <Icon name={`tabler:${value.icon === 'award' ? 'medal' : value.icon}`} size="28" />
                   </div>
                   <h3 class="text-2xl font-bold text-foreground mb-3">{value.title}</h3>
-                  <p class="text-muted-foreground leading-relaxed">
+                  <p class="text-base 2xl:text-lg text-muted-foreground leading-relaxed">
                     {value.description}
                   </p>
                 </div>
@@ -137,7 +139,7 @@ const imageMap: Record<string, ImageMetadata> = {
         <section class="py-20 bg-primary text-primary-foreground">
           <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl sm:text-4xl font-bold mb-6">{content.cta.heading}</h2>
-            <p class="text-xl opacity-90 mb-10 max-w-2xl mx-auto">
+            <p class="text-xl 2xl:text-2xl opacity-90 mb-10 max-w-2xl mx-auto">
               {content.cta.description}
             </p>
             <a href="https://vertexplatformsolutions.com/offers/healthcare-agencies" target="_blank" rel="noopener" class="inline-block bg-accent text-accent-foreground font-bold py-4 px-10 rounded-full shadow-lg transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300">

@@ -36,16 +36,16 @@ const { defaultProfile } = careProfileConfig;
 
 <section id={instanceId} class="relative overflow-hidden bg-accent-secondary/30" data-care-profile-content>
   <div class="max-w-7xl mx-auto">
-    <div class="grid lg:grid-cols-2 min-h-[60vh] lg:min-h-[70vh]">
+    <div class="grid lg:grid-cols-2">
       
       <!-- Content Column -->
-      <div class="flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-16 lg:py-24 text-center lg:text-left">
+      <div class="flex flex-col justify-center px-4 sm:px-6 lg:px-8 py-16 lg:py-20 text-center lg:text-left">
         <div class="max-w-xl mx-auto lg:mx-0">
             <h1 class="text-4xl sm:text-5xl lg:text-[3.5rem] font-bold leading-[1.1] tracking-tight text-foreground mb-6 text-balance" data-care-field="heading">
             <Fragment set:html={heading} />
             </h1>
             {subheading && (
-            <p class="text-lg sm:text-xl text-muted-foreground leading-relaxed mb-8 text-balance" data-care-field="subheading">
+            <p class="text-lg sm:text-xl 2xl:text-2xl text-muted-foreground leading-relaxed mb-8 text-balance" data-care-field="subheading">
                 <Fragment set:html={subheading} />
             </p>
             )}
@@ -74,7 +74,7 @@ const { defaultProfile } = careProfileConfig;
       </div>
       
       <!-- Visual Column -->
-      <div class="relative flex items-center justify-center py-12 lg:py-0 px-6 lg:px-0">
+      <div class="relative flex items-center justify-center py-12 lg:py-16 px-6 lg:px-8">
          {Astro.slots.has('visual') ? (
           <div class="relative w-full h-full flex items-center justify-center">
              <!-- Decorative circles for Visual Slot -->

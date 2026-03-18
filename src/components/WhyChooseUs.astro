@@ -41,10 +41,10 @@ const formatNumber = (n: number) => n.toString().padStart(2, '0');
 
 <section id={id} class="relative overflow-hidden">
   <!-- Gradient background from primary to lighter primary -->
-  <div class="bg-gradient-to-r from-primary via-primary to-primary/70 px-6 sm:px-12 lg:px-16 py-20 lg:py-32 rounded-3xl mx-4 sm:mx-8 lg:mx-16 my-16 lg:my-24">
+  <div class="bg-gradient-to-r from-primary via-primary to-primary/70 px-6 sm:px-12 lg:px-16 py-20 lg:py-32 rounded-3xl max-w-7xl mx-auto my-16 lg:my-24">
 
     <!-- Heading -->
-    <h2 class="text-3xl sm:text-4xl font-bold text-primary-foreground tracking-tight mb-12">
+    <h2 class="text-3xl sm:text-4xl 2xl:text-5xl font-bold text-primary-foreground tracking-tight mb-12">
       {heading}
     </h2>
 
@@ -63,7 +63,7 @@ const formatNumber = (n: number) => n.toString().padStart(2, '0');
           </h3>
 
           <!-- Description -->
-          <p class="text-primary-foreground/80 text-sm leading-relaxed">
+          <p class="text-primary-foreground/80 text-sm 2xl:text-base leading-relaxed">
             {point.description}
           </p>
         </div>

@@ -33,6 +33,7 @@ const {
 ---
 
 <section id={sectionId}>
+  <div class="max-w-7xl mx-auto">
   <div class="grid lg:grid-cols-2">
     <!-- Content Column - Light mint background -->
     <div class="bg-primary/10 px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-32 flex flex-col justify-center">
@@ -43,12 +44,12 @@ const {
         </div>
 
         <!-- Heading -->
-        <h2 class="text-3xl sm:text-4xl font-bold text-foreground tracking-tight leading-tight mb-6">
+        <h2 class="text-3xl sm:text-4xl 2xl:text-5xl font-bold text-foreground tracking-tight leading-tight mb-6">
           {heading}
         </h2>
 
         <!-- Description -->
-        <p class="text-muted-foreground text-lg leading-relaxed mb-8">
+        <p class="text-muted-foreground text-lg 2xl:text-xl leading-relaxed mb-8">
           {description}
         </p>
 
@@ -67,9 +68,10 @@ const {
       <Image
         src={imageSrc}
         alt={imageAlt}
-        class="absolute inset-0 w-full h-full object-cover"
+        class="absolute inset-0 w-full h-full object-cover object-top"
         loading="lazy"
       />
     </div>
+  </div>
   </div>
 </section>

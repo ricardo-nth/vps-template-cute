@@ -33,9 +33,9 @@ const activeNavLinks = navLinks.map(link => ({
 }));
 ---
 
-<header class="sticky top-0 z-50 w-full bg-primary transition-all duration-300">
+<header class="sticky top-0 2xl:top-12 z-50 w-full bg-primary transition-all duration-300">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-20">
+    <div class="flex items-center justify-between h-20 2xl:h-24">
       <!-- Brand / Logo -->
       <a href={brandHref} class="flex items-center gap-3 group">
         <!-- Logo mark: two circles -->
@@ -50,7 +50,7 @@ const activeNavLinks = navLinks.map(link => ({
 
       <!-- Desktop navigation -->
       <div class="hidden md:flex items-center">
-        <ul class="flex items-center gap-8 text-sm font-medium">
+        <ul class="flex items-center gap-8 text-sm 2xl:text-lg font-medium">
           {activeNavLinks.map((link) => (
             <li>
               <a
